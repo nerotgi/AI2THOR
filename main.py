@@ -1,6 +1,7 @@
 from ai2thor.controller import Controller
 from matplotlib import pyplot as plt
 import pandas as pd
+from openpyxl import load_workbook
 import openpyxl
 
 controller = Controller(
@@ -21,26 +22,21 @@ controller = Controller(
 objects = []
 
 scene_name = "FloorPlan_Train"
-for x in range(1, 12):
-    for y in range(1, 5):
+sheet_name = 0
+
+for x in range(1, 13):
+    for y in range(1, 6):
         scene_name = scene_name + str(x) + "_" + str(y)
+        sheet_name = scene_name
         controller.reset(scene=scene_name)
         for obj in controller.last_event.metadata["objects"]:
             objects.append(obj)
+        for i in range(len(objects)):
+            objects[i] = [objects[i]['name'], objects[i]['objectType']]
+
+        df = pd.DataFrame(objects)
+        with pd.ExcelWriter('~/Desktop/objects/test.xlsx', engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+            df.to_excel(writer, sheet_name=scene_name)
+            writer.save()
         scene_name = "FloorPlan_Train"
-
-
-scene_name = "FloorPlan_Val"
-for x in range(1, 3):
-    for y in range(1, 5):
-        scene_name = scene_name + str(x) + "_" + str(y)
-        controller.reset(scene=scene_name)
-        for obj in controller.last_event.metadata["objects"]:
-            objects.append(obj)
-        scene_name = "FloorPlan_Val"
-
-df = pd.DataFrame(objects)
-df.to_excel(excel_writer="/Users/personal/Desktop/test.xlsx")
-
-# objects = controller.last_event.metadata["objects"]
-# print(objects)
+        objects = []
