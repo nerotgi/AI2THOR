@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Added objects file" />
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="New mapping files">
+      <change afterPath="$PROJECT_DIR$/results/0923/2022-0923_resnet34_malmotest.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,15 +24,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nero/PycharmProjects/AI2THOR/main.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/nero/PycharmProjects/AI2THOR/data"
   }
-}</component>
-  <component name="RunManager" selected="Python.main">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Test">
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="AI2THOR" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663823924621</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New mapping files">
+      <created>1663988477334</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663988477334</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +146,7 @@
     <MESSAGE value="Added different rooms to the test" />
     <MESSAGE value="Created objects file for Chris" />
     <MESSAGE value="Added objects file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added objects file" />
+    <MESSAGE value="New mapping files" />
+    <option name="LAST_COMMIT_MESSAGE" value="New mapping files" />
   </component>
 </project>
