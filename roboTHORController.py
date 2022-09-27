@@ -8,7 +8,7 @@ import pathToNav
 
 # Function to run iterations of the experiment in the RoboTHOR environment
 def robo_thor_controller(pack, controller, reachablePositions, home_pos):
-    iTime = 30
+    iTime = 5
     iDist = 0
     start_time = time.time()
     nObsNewClass = [0 for i in range(len(pack[3]))]

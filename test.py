@@ -236,9 +236,9 @@ def trial(pack):
 
     # sim parameters
     if pDataName == 'grocery':
-        pInc = 2
+        pInc = 1
     else:
-        pInc = 2
+        pInc = 1
 
     pRestock = True
 
@@ -499,12 +499,17 @@ if __name__ == "__main__":
     except:
         pass
 
-    for i in range(len(testPack)):
-        singleResult = trial(testPack[i])
-        ix = singleResult[1]
-        totalResult[ix] = singleResult
-        df = pd.DataFrame(totalResult,
-                          columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName', 'obsInc',
-                                   'accInc', 'runTimeInc',
-                                   'runDistInc', 'trainTimeInc', 'aClass'])
-        df.to_excel(FILENAME)
+    for i in range(int(len(testPack)/10)):
+        for j in range(0, 11, 1):
+            if i != 0 and j == 0:
+                break
+            else:
+                singleResult = trial(testPack[j * i + j])
+                ix = singleResult[1]
+                totalResult[ix] = singleResult
+                df = pd.DataFrame(totalResult,
+                                  columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
+                                           'obsInc',
+                                           'accInc', 'runTimeInc',
+                                           'runDistInc', 'trainTimeInc', 'aClass'])
+                df.to_excel(FILENAME)
