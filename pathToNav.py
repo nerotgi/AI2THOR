@@ -1,11 +1,9 @@
 import numpy as np
 import math
-
+import random
 
 def path_to_nav(controller, step, path, moveHist):
     print('Path: ' + str(path))
-    circle = 0
-    #https://stackoverflow.com/questions/9215658/plot-a-circle-with-pyplot
     angle = 0
     arctanCheck = 0
     finalAngle = 0  # Angle robot faces before moving
@@ -112,5 +110,4 @@ def path_to_nav(controller, step, path, moveHist):
             moveHist.append([controller.last_event.metadata["agent"]["position"]['x'],
                              controller.last_event.metadata["agent"]["position"]['z']])
             # print("Stepping forward")
-    return controller, circle
-# https://stackoverflow.com/questions/9215658/plot-a-circle-with-pyplot
+    return controller

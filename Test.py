@@ -19,7 +19,6 @@ from ai2thor.controller import Controller
 from matplotlib import pyplot as plt
 import topDownView
 
-
 def trial(q, pack):
     # unpack
     pFileNo = pack[0]
@@ -236,9 +235,9 @@ def trial(q, pack):
 
     # sim parameters
     if pDataName == 'grocery':
-        pInc = 30
+        pInc = 120
     else:
-        pInc = 60
+        pInc = 240
 
     pRestock = True
 
@@ -350,8 +349,6 @@ def trial(q, pack):
         # count the new images (assume pRestock True)
         nTrainNewClass = nObsNewClass.copy()
         nObsTotClass = np.array(nObsTotClass)
-        print('nTrainNewClass length: ')
-        print('nObsTotClass size: ')
         nObsTotClass = nObsTotClass + np.array(nTrainNewClass)
         nObsTotClass = list(nObsTotClass)
 
@@ -465,7 +462,7 @@ def trial(q, pack):
         final_trainTime.append(np.round(trainTime, 2))
 
         if iInc == (pInc - 1): pStatus = 'complete'
-        output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, final_obs, final_acc, final_runTime,
+        output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, aClass, final_obs, final_acc, final_runTime,
                   final_runDist, final_trainTime]
         if q is not None: q.put(output)
         time.sleep(0.1)
@@ -524,6 +521,6 @@ if __name__ == "__main__":
             ix = singleResult[1]
             totalResult[ix] = singleResult
             df = pd.DataFrame(totalResult,
-                              columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'obsInc', 'accInc', 'runTimeInc',
+                              columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'aClass', 'obsInc', 'accInc', 'runTimeInc',
                                        'runDistInc', 'trainTimeInc'])
             df.to_excel(FILENAME)

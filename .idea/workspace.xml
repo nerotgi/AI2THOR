@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/0923_chris.xlsx" afterDir="false" />
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Plotting file is working.">
+      <change afterPath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obsToPath.py" beforeDir="false" afterPath="$PROJECT_DIR$/obsToPath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathToNav.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathToNav.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roboTHORController.py" beforeDir="false" afterPath="$PROJECT_DIR$/roboTHORController.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663988477334</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Plotting file is working.">
+      <created>1664238277063</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664238277063</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +166,8 @@
     <MESSAGE value="Created objects file for Chris" />
     <MESSAGE value="Added objects file" />
     <MESSAGE value="New mapping files" />
-    <option name="LAST_COMMIT_MESSAGE" value="New mapping files" />
+    <MESSAGE value="Plotting file is working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Plotting file is working." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

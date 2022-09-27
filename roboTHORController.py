@@ -8,40 +8,48 @@ import conToObs
 import obsToPath
 import pathToNav
 
-
 def robo_thor_controller(pack, controller, reachablePositions, home_pos):
-    iTime = 120
+    iTime = 30
     iDist = 0
     nObsNewClass = [0 for i in range(81)]
     start_time = time.time()
     moveHist = []
+    path1 = [] # previous path
+    path2 = [] # current path
     print(controller.last_event.metadata["agent"]["position"]["x"])
     fig, ac = plt.subplots()
+    if pack[3] == 'grocery':
+        xTrainWeights = [-20 for i in range(81)]
+    else:
+        xTrainWeights = [-20 for i in range(100)]
+    homeFlag = 0
     while True:
+        # Time check
         current_time = time.time()
         elapsed_time = current_time - start_time
         if elapsed_time > iTime:
             print("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
             break
 
-        position = [controller.last_event.metadata["agent"]["position"]['x'],
-                    controller.last_event.metadata["agent"]["position"]['z'],
-                    controller.last_event.metadata["agent"]["rotation"]["y"]]
+        # position = [controller.last_event.metadata["agent"]["position"]['x'],
+        #             controller.last_event.metadata["agent"]["position"]['z'],
+        #             controller.last_event.metadata["agent"]["rotation"]["y"]]
 
-        if pack[3] == 'grocery':
-            xTrainWeights = [-20 for i in range(81)]
-        else:
-            xTrainWeights = [-20 for i in range(100)]
-        homeFlag = 0
-
-        path1 = []
-        path2 = []
+        # Looking around
         controller, step, blockMatrix, objects = conToObs.con_to_obs(controller)
+        # Creating potential field and getting path
         controller, path, homeFlag, obs, trainClass = obsToPath.obs_to_path(controller, blockMatrix, home_pos,
                                                                            xTrainWeights, (0, 0), homeFlag,
                                                                            pack[7], moveHist, reachablePositions)
-        path2 = path1
-        path1 = path
+        for i in range(len(xTrainWeights)):
+            if trainClass == i:
+                nObsNewClass[i] += 1
+                break
+
+        # Randomizing the next step if previous path is the same as the new path
+
+        path1 = path2
+        path2 = path
         if path2 == path1:
             randDir = random.randint(0,4)
             if randDir == 0:
@@ -77,13 +85,10 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
                     moveMagnitude=step*5
                 )
         print(step)
-        for i in range(81):
-            if trainClass == i:
-                nObsNewClass[i] += 1
-                trainClass = -1
-                break
 
-        controller, circle = pathToNav.path_to_nav(controller, step, path, moveHist)
+        # Moving the agent according to the potential field
+        controller = pathToNav.path_to_nav(controller, step, path, moveHist)
+        path = 0
         df1 = pd.DataFrame(moveHist)
         df1.to_excel(excel_writer="~/Desktop/temp/moveHist.xlsx")
         iDist = iDist + step

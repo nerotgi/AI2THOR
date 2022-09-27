@@ -36,8 +36,6 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
             else:
                 obs[i].append(-1)
     obs = np.matrix(obs)
-    df1 = pd.DataFrame(obs)
-    df1.to_excel(excel_writer="~/Desktop/temp/obs.xlsx")
 
     # make an orientation arrow for plotting
     x0 = int(np.round(len(obs) / 2, 0)) - 1
