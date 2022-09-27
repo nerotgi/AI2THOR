@@ -1,12 +1,12 @@
-Centroid Based Construal Learning (CBCL) in AI2THOR
-
-** Python 3.6+ required **
-
-
-Dr. Alan Wagner, Associate Professor, Aerospace Engineering, Penn State
-Chris McClurg, PhD Student, Robotics Researcher, Penn State
-Nero Tyagi, Undergraduate, Aerospace Engineering, Penn State
-
+# ========================================================
+# Incremental Learning (CBCL) with Active Class Selection
+# in AI2THOR
+#
+# C McClurg, A Ayub, AR Wagner, S Rajtmajer, N Tyagi
+# ========================================================
+**************************
+Python 3.6+ required
+**************************
 
 About: 
 

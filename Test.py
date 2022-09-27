@@ -7,18 +7,18 @@
 from multiprocess import Process, Queue
 from sklearn.model_selection import train_test_split
 # from utils import functions
-from asdf.functions import CBCL_WVS, CBCL_SVM, SVM_redistrict, SVM_simple
-from asdf.functions import update_centroids, aff_simple, aff_redistrict
-from asdf.get_incremental import incrementalData
+from data.functions import CBCL_WVS, CBCL_SVM, SVM_redistrict, SVM_simple
+from data.functions import update_centroids, aff_simple, aff_redistrict
+from data.get_incremental import incrementalData
 from datetime import datetime
 import pandas as pd
 import numpy as np
 import random, pickle, time, os
 import roboTHORController
 from ai2thor.controller import Controller
-from matplotlib import pyplot as plt
-import topDownView
 
+# TODO try iTHOR environments since there's 120 of them
+# TODO try smaller step-size
 def trial(q, pack):
     # unpack
     pFileNo = pack[0]

@@ -1,5 +1,4 @@
 import copy
-from PIL import Image
 
 
 def get_top_down_frame(controller):
