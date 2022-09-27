@@ -6,6 +6,7 @@ import conToObs
 import obsToPath
 import pathToNav
 
+
 # Function to run iterations of the experiment in the RoboTHOR environment
 def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     iTime = 30
@@ -13,9 +14,9 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     start_time = time.time()
     nObsNewClass = [0 for i in range(len(pack[3]))]
     moveHist = []
-    path1 = [] # previous path
-    path2 = [] # current path
-
+    path1 = []  # previous path
+    path2 = []  # current path
+    xTrainWeights = []
     if pack[7] == 'grocery':
         xTrainWeights = [-20 for i in range(81)]
     elif pack[7] == 'cifar':
@@ -39,28 +40,21 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
         controller, step, blockMatrix, objects = conToObs.con_to_obs(controller)
         # Creating potential field and getting path
         controller, path, homeFlag, obs, trainClass = obsToPath.obs_to_path(controller, blockMatrix, home_pos,
-                                                                           xTrainWeights, (0, 0), homeFlag,
-                                                                           pack[7], moveHist, reachablePositions)
-        # step = 0.1 # Overriding step-size as a test. TODO Check if this makes a difference (no test run as of 22:08,
-        # TODO 26/09)
+                                                                            xTrainWeights, (0, 0), homeFlag,
+                                                                            pack[7], moveHist, reachablePositions)
         for i in range(len(xTrainWeights)):
             if trainClass == i:
                 nObsNewClass[i] += 1
                 break
 
-        # Flawed randomization logic
-
-        # Randomizing the next step if previous path is the same as the new path
-
         path1 = path2
         path2 = path
         if path2 == path1:
-            print("Same two paths in a row detected...randomizing the next step.")
-            randDir = random.randint(0,4)
+            randDir = random.randint(0, 4)
             if randDir == 0:
                 controller.step(
                     action="MoveAhead",
-                    moveMagnitude=step*5
+                    moveMagnitude=step * 5
                 )
             elif randDir == 1:
                 controller.step(
@@ -69,7 +63,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
                 )
                 controller.step(
                     action="MoveAhead",
-                    moveMagnitude=step*5
+                    moveMagnitude=step * 5
                 )
             elif randDir == 2:
                 controller.step(
@@ -78,7 +72,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
                 )
                 controller.step(
                     action="MoveAhead",
-                    moveMagnitude=step*5
+                    moveMagnitude=step * 5
                 )
             elif randDir == 3:
                 controller.step(
@@ -87,17 +81,13 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
                 )
                 controller.step(
                     action="MoveAhead",
-                    moveMagnitude=step*5
+                    moveMagnitude=step * 5
                 )
-        else:
-            print("No need to randomize.")
 
         # Moving the agent according to the potential field
-        controller, iDist = pathToNav.path_to_nav(controller, step, path, moveHist, iDist)
-        path = 0
+        controller, iDist = pathToNav.path_to_nav(controller, iDist, step, path, moveHist)
         df1 = pd.DataFrame(moveHist)
         df1.to_excel(excel_writer="~/Desktop/temp/moveHist.xlsx")
-
 
     return [controller.last_event.metadata["agent"]["position"]['x'],
             controller.last_event.metadata["agent"]["position"]['y'],

@@ -293,8 +293,6 @@ def trial(queue, pack):
                    "FloorPlan_Train12_4", "FloorPlan_Train12_5"]
                   ]
 
-        print(scenes[collectionNum][sceneNum])
-
         controller = Controller(
             agentMode="locobot",
             visibilityDistance=5.0,
@@ -470,6 +468,7 @@ def trial(queue, pack):
         output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc,
                   final_runTime,
                   final_runDist, final_trainTime, aClass]
+        print(output)
         if queue is not None: queue.put(output)
         time.sleep(0.1)
 
@@ -478,19 +477,17 @@ if __name__ == "__main__":
     # prepare pack for test
     i = 0
     testPack = []
-    for pMod in [1]:
-        for pSeed in range(10):
-            for pDataName in ['grocery', 'cifar']:
+    for pDataName in ['grocery', 'cifar']:
+        for pMod in [1]:
+            for pSeed in range(10):
                 for pBiasType in ['classWt', 'random']:  # SVM_redistrict, SVM_uniform
                     for pCBCL in ['WVS', 'SVM']:
                         testPack.append([i, pMod, pSeed, pDataName, pBiasType, pCBCL])
                         i += 1
     totalResult = [[] for i in range(len(testPack))]
 
-
     # multi-processing params
-    nProcs = 4
-    mp.set_start_method("spawn")
+    nProcs = 8
     queue = mp.Queue()
     processes = []
 
@@ -505,28 +502,44 @@ if __name__ == "__main__":
     except:
         pass
 
-    # run test and write results
-    for i in range(nProcs):
-        processes.append(mp.Process(target=trial, args=(queue, testPack[0])))
-        processes[-1].start()
-        testPack.pop(0)
+    # Populating the multiprocess queue until all testPacks are exhausted
+    while len(testPack):
+        # Populating the queue with as many testPacks as possible, while also checking whether the list has ended
+        for i in range(nProcs - len(processes)):
+            # Reassigning more testPacks to killed processes
+            if len(testPack):
+                processes.append(mp.Process(target=trial, args=(queue, testPack[0])))
+                print("Test pack assigned: ")
+                print(testPack[0])
+                testPack.pop(0)
+            else:
+                break
+        processes[0].start()
+        processes[0].join()
+        processes[1].start()
+        processes[1].join()
+        processes[2].start()
+        processes[2].join()
+        # Starting all the processes that are now populated with testPacks
+        # for process in processes:
+        #     print("starting a new process")
+        #     process.start()
+        #     process.join()
 
-    while len(processes):
-        processes = [process for process in processes if process.is_alive()]
-        processesEmpty = nProcs - len(processes)
 
         while queue.qsize() > 0:
-            singleResult = queue.get()
-            ix = singleResult[1]
+            print(queue.qsize())
+            iterResult = queue.get()
             totalResult[ix] = singleResult
+            print(totalResult)
             df = pd.DataFrame(totalResult,
                               columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
                                        'obsInc', 'accInc', 'runTimeInc',
                                        'runDistInc', 'trainTimeInc', 'aClass'])
             df.to_excel(FILENAME)
+            print(FILENAME)
 
-        for i in range(processesEmpty):
-            if len(testPack):
-                processes.append(mp.Process(target=trial, args=(queue, testPack[0])))
-                processes[-1].start()
-                testPack.pop(0)
+        while len(processes) > 0:
+            processes = [job for job in jobs if job.is_alive()]
+            print("Processes killed: " + nProcs - len(jobs))
+            time.sleep(1)

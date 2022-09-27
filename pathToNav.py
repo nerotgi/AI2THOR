@@ -3,8 +3,8 @@ import math
 import random
 
 # Function to move the agent in the scene according to the path given by obs_to_path
+
 def path_to_nav(controller, iDist, step, path, moveHist):
-    print('Path: ' + str(path))
     angle = 0
     arctanCheck = 0
     finalAngle = 0  # Angle robot faces before moving
