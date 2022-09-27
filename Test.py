@@ -464,7 +464,7 @@ def trial(q, pack):
         final_runDist.append(runDist)
         final_trainTime.append(np.round(trainTime, 2))
 
-        sceneNames.append(scenes[collectionNum][sceneNum])
+        sceneNames.append(str(collectionNum) + "_" + str(sceneNum))
         if iInc == (pInc - 1): pStatus = 'complete'
         output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc, final_runTime,
                   final_runDist, final_trainTime, aClass]

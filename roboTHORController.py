@@ -42,6 +42,8 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
         controller, path, homeFlag, obs, trainClass = obsToPath.obs_to_path(controller, blockMatrix, home_pos,
                                                                            xTrainWeights, (0, 0), homeFlag,
                                                                            pack[7], moveHist, reachablePositions)
+        step = 0.1 # Overriding step-size as a test. TODO Check if this makes a difference (no test run as of 22:08,
+        # TODO 26/09)
         for i in range(len(xTrainWeights)):
             if trainClass == i:
                 nObsNewClass[i] += 1
@@ -86,7 +88,6 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
                     action="MoveAhead",
                     moveMagnitude=step*5
                 )
-        print(step)
 
         # Moving the agent according to the potential field
         controller = pathToNav.path_to_nav(controller, step, path, moveHist)

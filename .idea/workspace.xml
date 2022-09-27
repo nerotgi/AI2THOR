@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Fixed cifar output.">
-      <change afterPath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" afterDir="false" />
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Outputting name of scene in results. Changed number of processes to 4 to speed up launch and reduce garbage incTime.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/roboTHORController.py" beforeDir="false" afterPath="$PROJECT_DIR$/roboTHORController.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664243383457</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Outputting name of scene in results. Changed number of processes to 4 to speed up launch and reduce garbage incTime.">
+      <created>1664244364972</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664244364972</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +187,8 @@
     <MESSAGE value="Plotting file is working." />
     <MESSAGE value="Minor bugs fixed and comments added." />
     <MESSAGE value="Fixed cifar output." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed cifar output." />
+    <MESSAGE value="Outputting name of scene in results. Changed number of processes to 4 to speed up launch and reduce garbage incTime." />
+    <option name="LAST_COMMIT_MESSAGE" value="Outputting name of scene in results. Changed number of processes to 4 to speed up launch and reduce garbage incTime." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
