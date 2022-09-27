@@ -262,6 +262,8 @@ def trial(q, pack):
 
     collectionNum = 0
     sceneNum = 0
+    sceneNames = []
+
     for iInc in range(pInc):
 
         if iInc % 10 == 0:
@@ -320,7 +322,7 @@ def trial(q, pack):
         yaw = np.round(controller.last_event.metadata["agent"]["rotation"]["y"], 0)
         home_pos = [x, z, yaw]
 
-        print(str(iInc) + ' of ' + str(pInc))
+        print(str(iInc + 1) + ' of ' + str(pInc))
         # count available
         nTrainSimClass = [len(x) for x in xTrainTot]
         nClassEmpty = 0
@@ -462,9 +464,10 @@ def trial(q, pack):
         final_runDist.append(runDist)
         final_trainTime.append(np.round(trainTime, 2))
 
+        sceneNames.append(scenes[collectionNum][sceneNum])
         if iInc == (pInc - 1): pStatus = 'complete'
-        output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, aClass, final_obs, final_acc, final_runTime,
-                  final_runDist, final_trainTime]
+        output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc, final_runTime,
+                  final_runDist, final_trainTime, aClass]
         if q is not None: q.put(output)
         time.sleep(0.1)
 
@@ -522,6 +525,6 @@ if __name__ == "__main__":
             ix = singleResult[1]
             totalResult[ix] = singleResult
             df = pd.DataFrame(totalResult,
-                              columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'aClass', 'obsInc', 'accInc', 'runTimeInc',
-                                       'runDistInc', 'trainTimeInc'])
+                              columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName', 'obsInc', 'accInc', 'runTimeInc',
+                                       'runDistInc', 'trainTimeInc', 'aClass'])
             df.to_excel(FILENAME)

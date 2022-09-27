@@ -52,6 +52,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
         path1 = path2
         path2 = path
         if path2 == path1:
+            # Same two paths in a row detected...randomizing the next step.
             randDir = random.randint(0,4)
             if randDir == 0:
                 controller.step(
