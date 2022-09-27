@@ -23,6 +23,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     else:
         print("pDataName not recognized.")
     homeFlag = 0
+    counter = 0
     while True:
         # Time check
         current_time = time.time()
@@ -48,47 +49,50 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
                 nObsNewClass[i] += 1
                 break
 
-        # Randomizing the next step if previous path is the same as the new path
+        # Following randomization method is flawed. Does not account for two straight paths in a row.
 
-        path1 = path2
-        path2 = path
-        if path2 == path1:
-            # Same two paths in a row detected...randomizing the next step.
-            randDir = random.randint(0,4)
-            if randDir == 0:
-                controller.step(
-                    action="MoveAhead",
-                    moveMagnitude=step*5
-                )
-            elif randDir == 1:
-                controller.step(
-                    action="RotateLeft",
-                    degrees=90
-                )
-                controller.step(
-                    action="MoveAhead",
-                    moveMagnitude=step*5
-                )
-            elif randDir == 2:
-                controller.step(
-                    action="RotateLeft",
-                    degrees=180
-                )
-                controller.step(
-                    action="MoveAhead",
-                    moveMagnitude=step*5
-                )
-            elif randDir == 3:
-                controller.step(
-                    action="RotateLeft",
-                    degrees=270
-                )
-                controller.step(
-                    action="MoveAhead",
-                    moveMagnitude=step*5
-                )
-
+        # # Randomizing the next step if previous path is the same as the new path
+        # if path == path2:
+        #     print("Same two paths in a row detected...randomizing the next step")
+        #     randDir = random.randint(0, 4)
+        #     if randDir == 0:
+        #         controller.step(
+        #             action="MoveAhead",
+        #             moveMagnitude=step * 5
+        #         )
+        #     elif randDir == 1:
+        #         controller.step(
+        #             action="RotateLeft",
+        #             degrees=90
+        #         )
+        #         controller.step(
+        #             action="MoveAhead",
+        #             moveMagnitude=step * 5
+        #         )
+        #     elif randDir == 2:
+        #         controller.step(
+        #             action="RotateLeft",
+        #             degrees=180
+        #         )
+        #         controller.step(
+        #             action="MoveAhead",
+        #             moveMagnitude=step * 5
+        #         )
+        #     elif randDir == 3:
+        #         controller.step(
+        #             action="RotateLeft",
+        #             degrees=270
+        #         )
+        #         controller.step(
+        #             action="MoveAhead",
+        #             moveMagnitude=step * 5
+        #         )
+        # else:
+        #     print("Randomization not required")
+        # path1 = path2
+        # path2 = path
         # Moving the agent according to the potential field
+
         controller = pathToNav.path_to_nav(controller, step, path, moveHist)
         path = 0
         df1 = pd.DataFrame(moveHist)

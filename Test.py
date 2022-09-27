@@ -40,7 +40,7 @@ def trial(q, pack):
     random.seed(pSeed)
 
     # read visual features
-    readFile = './asdf/features/' + pDataName + '_' + pNetType + '_' + pNetFit + '_'
+    readFile = './data/features/' + pDataName + '_' + pNetType + '_' + pNetFit + '_'
     with open(readFile + 'train_features.data', 'rb') as fh:
         trainFeatRGB = pickle.load(fh)
     with open(readFile + 'test_features.data', 'rb') as fh:
@@ -293,8 +293,6 @@ def trial(q, pack):
                    "FloorPlan_Train12_4", "FloorPlan_Train12_5"]
                   ]
 
-        print(scenes[collectionNum][sceneNum])
-
         controller = Controller(
             agentMode="locobot",
             visibilityDistance=5.0,
@@ -490,7 +488,7 @@ if __name__ == "__main__":
     totalResult = [[] for i in range(len(testPack))]
 
     # multi-processing params
-    nProcs = 4
+    nProcs = 8
     q = Queue()
     pHandle = []
 
