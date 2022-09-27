@@ -1,89 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="TODO: Step-sze&#10;Changed output of sceneNames so it's more compact.">
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Cleanup-2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/objects_in_ithor.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/data/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/help.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/block.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/env/block.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/cifar-labels.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/env/cifar-labels.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/cifar-mapping.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/env/cifar-mapping.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/grocery-labels.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/env/grocery-labels.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/grocery-mapping.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/env/grocery-mapping.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/layout.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/env/layout.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_test_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/cifar_resnet34_imagenet_test_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_test_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/cifar_resnet34_imagenet_test_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_train_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/cifar_resnet34_imagenet_train_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_train_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/cifar_resnet34_imagenet_train_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_test_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/grocery_resnet34_imagenet_test_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_test_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/grocery_resnet34_imagenet_test_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_train_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/grocery_resnet34_imagenet_train_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_train_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/data/features/grocery_resnet34_imagenet_train_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_env-cifar.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/get_env-cifar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_env-grocery.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/get_env-grocery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/get_features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_incremental.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/get_incremental.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conToObs.py" beforeDir="false" afterPath="$PROJECT_DIR$/conToObs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/objects.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/objects_in_robothor.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/robothor_to_cifar_BACKUP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/robothor_to_cifar_FloorPlan_Train1_1.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/robothor_to_grocery_BACKUP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/robothor_to_grocery_FloorPlan_Train1_1.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getBlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/getBlock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsToNav.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsToPath.py" beforeDir="false" afterPath="$PROJECT_DIR$/obsToPath.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathToNav.py" beforeDir="false" afterPath="$PROJECT_DIR$/pathToNav.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roboTHORController.py" beforeDir="false" afterPath="$PROJECT_DIR$/roboTHORController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/data/villages_nether.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/region/r.1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/data/villages_end.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/region/r.1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/Die W„„„lt.1360362259238.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/data/Village.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/data/villages.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/level.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/level.dat_mcr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/level.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/playerdata/2a0c291d-fdc0-3764-a63a-7eea53f90ac8.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/playerdata/5627dd98-e6be-3c21-b8a8-e92344183641.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/playerdata/8c15ca8d-a7cb-4187-9411-ede0344b3363.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/Ganzer.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/Pilli.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/Player.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/niki2011.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-2.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.2.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.2.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/session.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/stats/2a0c291d-fdc0-3764-a63a-7eea53f90ac8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/stats/5627dd98-e6be-3c21-b8a8-e92344183641.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/stats/8c15ca8d-a7cb-4187-9411-ede0344b3363.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topDownView.py" beforeDir="false" afterPath="$PROJECT_DIR$/topDownView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/figure/0926_robothor.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/figure/0923_multiple_scenes.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +19,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -111,12 +37,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nero/PycharmProjects/AI2THOR/plot.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/nero/PycharmProjects/AI2THOR/plot.py",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/results" />
@@ -251,7 +178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664244974105</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Cleanup&#10;More commments">
+      <created>1664259787544</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664259787544</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Cleanup-2">
+      <created>1664260984150</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1664260984150</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +220,9 @@
     <MESSAGE value="Fixed cifar output." />
     <MESSAGE value="Outputting name of scene in results. Changed number of processes to 4 to speed up launch and reduce garbage incTime." />
     <MESSAGE value="TODO: Step-sze&#10;Changed output of sceneNames so it's more compact." />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: Step-sze&#10;Changed output of sceneNames so it's more compact." />
+    <MESSAGE value="Cleanup&#10;More commments" />
+    <MESSAGE value="Cleanup-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup-2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
