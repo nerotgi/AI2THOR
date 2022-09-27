@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Cleanup-2">
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Cleanup-3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +53,7 @@
       <recent name="$PROJECT_DIR$/data/features" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Test">
+  <component name="RunManager" selected="Python.plot">
     <configuration name="debug_controller" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="AI2THOR" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -197,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664261315011</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Cleanup-2">
+      <created>1664262387465</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1664262387465</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Cleanup-3">
+      <created>1664262401608</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1664262401608</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +242,8 @@
     <MESSAGE value="TODO: Step-sze&#10;Changed output of sceneNames so it's more compact." />
     <MESSAGE value="Cleanup&#10;More commments" />
     <MESSAGE value="Cleanup-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup-2" />
+    <MESSAGE value="Cleanup-3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup-3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

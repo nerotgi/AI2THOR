@@ -19,6 +19,7 @@ from ai2thor.controller import Controller
 
 # TODO try iTHOR environments since there's 120 of them
 # TODO try smaller step-size
+
 def trial(q, pack):
     # unpack
     pFileNo = pack[0]

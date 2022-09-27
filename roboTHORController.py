@@ -15,7 +15,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     moveHist = []
     path1 = [] # previous path
     path2 = [] # current path
-    fig, ac = plt.subplots()
+
     if pack[7] == 'grocery':
         xTrainWeights = [-20 for i in range(81)]
     elif pack[7] == 'cifar':
