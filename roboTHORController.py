@@ -11,17 +11,18 @@ import pathToNav
 def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     iTime = 30
     iDist = 0
-    nObsNewClass = [0 for i in range(81)]
     start_time = time.time()
+    nObsNewClass = [0 for i in range(len(pack[3]))]
     moveHist = []
     path1 = [] # previous path
     path2 = [] # current path
-    print(controller.last_event.metadata["agent"]["position"]["x"])
     fig, ac = plt.subplots()
-    if pack[3] == 'grocery':
+    if pack[7] == 'grocery':
         xTrainWeights = [-20 for i in range(81)]
-    else:
+    elif pack[7] == 'cifar':
         xTrainWeights = [-20 for i in range(100)]
+    else:
+        print("pDataName not recognized.")
     homeFlag = 0
     while True:
         # Time check

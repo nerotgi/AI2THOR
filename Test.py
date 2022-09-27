@@ -338,6 +338,7 @@ def trial(q, pack):
 
         # collect images in RoboTHOR simulation
         pack = [pSeed, iPos, aClass, nObsTotClass, nTrainSimClass, 0, pRestock, pDataName, pFileNo, iInc]
+        # mcTicks is a leftover artifact from Malmo test. Its value is irrelevant.
         iPos, mcTicks, iDist, iTime, nObsNewClass = roboTHORController.robo_thor_controller(pack, controller,
                                                                                             reachablePositions,
                                                                                             home_pos)
@@ -485,7 +486,7 @@ if __name__ == "__main__":
     totalResult = [[] for i in range(len(testPack))]
 
     # multi-processing params
-    nProcs = 12
+    nProcs = 4
     q = Queue()
     pHandle = []
 
