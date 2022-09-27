@@ -2,6 +2,7 @@ import numpy as np
 import math
 import random
 
+# Function to move the agent in the scene according to the path given by obs_to_path
 def path_to_nav(controller, step, path, moveHist):
     print('Path: ' + str(path))
     angle = 0

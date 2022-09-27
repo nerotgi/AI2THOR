@@ -1,7 +1,8 @@
 import getBlock
 from matplotlib import pyplot as plt
-import pandas as pd
 
+# Function to get observation from the RoboTHOR controller in the form of objects visible to the agent in a 2-D array
+# (in the X-Z plane)
 def con_to_obs(controller):
 
     objects = []
@@ -26,7 +27,6 @@ def con_to_obs(controller):
     for item in objects:
         if item not in obj:
             obj.append([item['name'], item['objectType'], item['position']['x'], item['position']['z']])
-
 
     # Finding max and min values of X and Z
     maxX = 0

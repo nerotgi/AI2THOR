@@ -1,13 +1,12 @@
-import numpy as np
 import time
 from matplotlib import pyplot as plt
 import pandas as pd
 import random
-import openpyxl
 import conToObs
 import obsToPath
 import pathToNav
 
+# Function to run iterations of the experiment in the RoboTHOR environment
 def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     iTime = 30
     iDist = 0
