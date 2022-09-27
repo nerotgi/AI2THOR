@@ -3,7 +3,7 @@
 #
 # C McClurg, A Ayub, AR Wagner, S Rajtmajer
 # =============================================================================
-
+import multiprocessing as mp
 from sklearn.model_selection import train_test_split
 from data.functions import CBCL_WVS, CBCL_SVM, SVM_redistrict, SVM_simple
 from data.functions import update_centroids, aff_simple, aff_redistrict
@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 # TODO try iTHOR environments since there's 120 of them
 # TODO try smaller step-size
-def trial(pack):
+def trial(queue, pack):
     # unpack
     pFileNo = pack[0]
     pMod = pack[1]
@@ -236,9 +236,9 @@ def trial(pack):
 
     # sim parameters
     if pDataName == 'grocery':
-        pInc = 1
+        pInc = 120
     else:
-        pInc = 1
+        pInc = 240
 
     pRestock = True
 
@@ -467,12 +467,11 @@ def trial(pack):
 
         sceneNames.append(str(collectionNum) + "_" + str(sceneNum))
         if iInc == (pInc - 1): pStatus = 'complete'
-        time.sleep(0.1)
-        return [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc, final_runTime,
+        output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc,
+                  final_runTime,
                   final_runDist, final_trainTime, aClass]
-
-    # -----------------------------------------------------------------------------
-
+        if queue is not None: queue.put(output)
+        time.sleep(0.1)
 
 if __name__ == "__main__":
 
@@ -488,6 +487,13 @@ if __name__ == "__main__":
                         i += 1
     totalResult = [[] for i in range(len(testPack))]
 
+
+    # multi-processing params
+    nProcs = 4
+    mp.set_start_method("spawn")
+    queue = mp.Queue()
+    processes = []
+
     # create write path
     now = datetime.now()
     d0 = now.strftime('%m%d')
@@ -499,17 +505,28 @@ if __name__ == "__main__":
     except:
         pass
 
-    for i in range(int(len(testPack)/10)):
-        for j in range(0, 11, 1):
-            if i != 0 and j == 0:
-                break
-            else:
-                singleResult = trial(testPack[j * i + j])
-                ix = singleResult[1]
-                totalResult[ix] = singleResult
-                df = pd.DataFrame(totalResult,
-                                  columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
-                                           'obsInc',
-                                           'accInc', 'runTimeInc',
-                                           'runDistInc', 'trainTimeInc', 'aClass'])
-                df.to_excel(FILENAME)
+    # run test and write results
+    for i in range(nProcs):
+        processes.append(mp.Process(target=trial, args=(queue, testPack[0])))
+        processes[-1].start()
+        testPack.pop(0)
+
+    while len(processes):
+        processes = [process for process in processes if process.is_alive()]
+        processesEmpty = nProcs - len(processes)
+
+        while queue.qsize() > 0:
+            singleResult = queue.get()
+            ix = singleResult[1]
+            totalResult[ix] = singleResult
+            df = pd.DataFrame(totalResult,
+                              columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
+                                       'obsInc', 'accInc', 'runTimeInc',
+                                       'runDistInc', 'trainTimeInc', 'aClass'])
+            df.to_excel(FILENAME)
+
+        for i in range(processesEmpty):
+            if len(testPack):
+                processes.append(mp.Process(target=trial, args=(queue, testPack[0])))
+                processes[-1].start()
+                testPack.pop(0)

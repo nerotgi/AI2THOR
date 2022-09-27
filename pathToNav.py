@@ -3,7 +3,7 @@ import math
 import random
 
 # Function to move the agent in the scene according to the path given by obs_to_path
-def path_to_nav(controller, step, path, moveHist):
+def path_to_nav(controller, iDist, step, path, moveHist):
     print('Path: ' + str(path))
     angle = 0
     arctanCheck = 0
@@ -110,5 +110,5 @@ def path_to_nav(controller, step, path, moveHist):
             )
             moveHist.append([controller.last_event.metadata["agent"]["position"]['x'],
                              controller.last_event.metadata["agent"]["position"]['z']])
-            # print("Stepping forward")
-    return controller
+            iDist = iDist + step
+    return controller, iDist

@@ -1,9 +1,11 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
 import random
 import math
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
 
 # Function to generate a velocity field and get path from the observation data collected from con_to_obs
 def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,

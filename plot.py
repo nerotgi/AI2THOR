@@ -1,20 +1,26 @@
-import matplotlib.pyplot as plt
-import seaborn as sns;
-
-sns.set()
+from os.path import exists
 import pandas as pd
 import numpy as np
 from ast import literal_eval
 from datetime import datetime
-
+import seaborn as sns
+sns.set()
 now = datetime.now()
 dtime = now.strftime('%m%d')
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
 
 plt.rcParams.update(plt.rcParamsDefault)
-plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
-df = pd.read_excel('./results/0923_chris.xlsx')
+fileName = "./results/"
+nameInput = input("fileName: ")
+while not exists(fileName+nameInput+".xlsx"):
+    nameInput = input("Error: File doesn't exist. Filename? ")
+fileName = fileName + nameInput + ".xlsx"
+df = pd.read_excel(fileName)
 df = df[df['status'] == 'complete']
 df = df[df['mod'] == 1]
 df = df.iloc[:, 5:-1]
@@ -88,7 +94,7 @@ del x, avg, std, label, d, dList, p, pList, b, bList, temp
 # fig, ((ax1,ax2), (ax3,ax4)) = plt.subplots(2, 2, sharex = 'col', sharey = 'row', figsize=(10,7))
 fig, (ax1, ax2) = plt.subplots(1, 2, sharex='col', sharey='row', figsize=(10, 5))
 plt.rcParams.update(plt.rcParamsDefault)
-plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
 
