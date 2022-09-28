@@ -7,18 +7,17 @@
 from multiprocess import Process, Queue
 from sklearn.model_selection import train_test_split
 # from utils import functions
-from data.functions import CBCL_WVS, CBCL_SVM, SVM_redistrict, SVM_simple
-from data.functions import update_centroids, aff_simple, aff_redistrict
-from data.get_incremental import incrementalData
+from asdf.functions import CBCL_WVS, CBCL_SVM, SVM_redistrict, SVM_simple
+from asdf.functions import update_centroids, aff_simple, aff_redistrict
+from asdf.get_incremental import incrementalData
 from datetime import datetime
 import pandas as pd
 import numpy as np
 import random, pickle, time, os
 import roboTHORController
 from ai2thor.controller import Controller
-
-# TODO try iTHOR environments since there's 120 of them
-# TODO try smaller step-size
+from matplotlib import pyplot as plt
+import topDownView
 
 def trial(q, pack):
     # unpack
@@ -40,7 +39,7 @@ def trial(q, pack):
     random.seed(pSeed)
 
     # read visual features
-    readFile = './data/features/' + pDataName + '_' + pNetType + '_' + pNetFit + '_'
+    readFile = './asdf/features/' + pDataName + '_' + pNetType + '_' + pNetFit + '_'
     with open(readFile + 'train_features.data', 'rb') as fh:
         trainFeatRGB = pickle.load(fh)
     with open(readFile + 'test_features.data', 'rb') as fh:
@@ -293,6 +292,8 @@ def trial(q, pack):
                    "FloorPlan_Train12_4", "FloorPlan_Train12_5"]
                   ]
 
+        print(scenes[collectionNum][sceneNum])
+
         controller = Controller(
             agentMode="locobot",
             visibilityDistance=5.0,
@@ -463,7 +464,7 @@ def trial(q, pack):
         final_runDist.append(runDist)
         final_trainTime.append(np.round(trainTime, 2))
 
-        sceneNames.append(str(collectionNum) + "_" + str(sceneNum))
+        sceneNames.append(scenes[collectionNum][sceneNum])
         if iInc == (pInc - 1): pStatus = 'complete'
         output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc, final_runTime,
                   final_runDist, final_trainTime, aClass]
@@ -488,7 +489,7 @@ if __name__ == "__main__":
     totalResult = [[] for i in range(len(testPack))]
 
     # multi-processing params
-    nProcs = 8
+    nProcs = 4
     q = Queue()
     pHandle = []
 

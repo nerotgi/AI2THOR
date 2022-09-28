@@ -2,7 +2,6 @@ import numpy as np
 import math
 import random
 
-# Function to move the agent in the scene according to the path given by obs_to_path
 def path_to_nav(controller, step, path, moveHist):
     print('Path: ' + str(path))
     angle = 0
@@ -15,7 +14,7 @@ def path_to_nav(controller, step, path, moveHist):
     # Calculating angle robot has to turn
     if len(path) > 1:
         # Selecting two adjacent segments to find the angle between them
-        for i in range(len(path)-1):
+        for i in range(1):
             # print("Segment " + str(i + 1))
             dx = path[i + 1][0] - path[i][0]
             dz = path[i + 1][1] - path[i][1]
@@ -86,25 +85,23 @@ def path_to_nav(controller, step, path, moveHist):
             randomAng = 0
             angleMult = 1
             i = 1  # sanity check for the while loop
-            # Avoid places that have already been visited
-            # while nextPos in moveHist:
-            #     print('Randomizing angle: ')
-            #     if i != 1:
-            #         finalAngle = finalAngle - randomAng  # removing the outdated randomAng from the sum
-            #     if i > 50:
-            #         break
-            #     randomAng = random.randint(-10 * angleMult, 10 * angleMult)
-            #     print(randomAng)
-            #     finalAngle = finalAngle + randomAng
-            #     nextPos = [math.sin(finalAngle * math.pi / 180) * step + currPos[0], math.cos(finalAngle * math.pi / 180)
-            #                * step + currPos[1]]
-            #     i += 1
-            #     angleMult = angleMult * 1.05
-            # controller.step(
-            #     action="RotateLeft",
-            #     degrees=randomAng
-            # )
-
+            while nextPos in moveHist:
+                print('Randomizing angle: ')
+                if i != 1:
+                    finalAngle = finalAngle - randomAng  # removing the outdated randomAng from the sum
+                if i > 50:
+                    break
+                randomAng = random.randint(-10 * angleMult, 10 * angleMult)
+                print(randomAng)
+                finalAngle = finalAngle + randomAng
+                nextPos = [math.sin(finalAngle * math.pi / 180) * step + currPos[0], math.cos(finalAngle * math.pi / 180)
+                           * step + currPos[1]]
+                i += 1
+                angleMult = angleMult * 1.05
+            controller.step(
+                action="RotateLeft",
+                degrees=randomAng
+            )
             # Resetting face angle to equal the segment angle after end of rotation
             controller.step(
                 action="MoveAhead",

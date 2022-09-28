@@ -1,5 +1,3 @@
-
-# Function to get block number for a certain object
 def get_block(name, objectType):
     temp = name
     temp = temp.split(' ')[0]

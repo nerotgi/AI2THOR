@@ -5,7 +5,7 @@ import seaborn as sns
 import random
 import math
 
-# Function to generate a velocity field and get path from the observation data collected from con_to_obs
+
 def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
                 pDataName, moveHist, reachablePositions):
     trainClass = -1
@@ -19,7 +19,9 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
 
     classno = list(mapping.classNo)
     # df1 = pd.DataFrame(blocks)
+    # df2 = pd.DataFrame(classno)
     # df1.to_excel(excel_writer="/Users/personal/Desktop/temp/blocks.xlsx")
+    # df2.to_excel(excel_writer="/Users/personal/Desktop/temp/classno.xlsx")
 
     # Creating a matrix of objects in a 2-D grid near the robot.
     # make a matrix of classno per x-z location
@@ -192,6 +194,58 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
     # plt.show()
 
     # Check different cases of agent status (home, scatter, move, train, repeat)
+
+    # ---------------------------------------------------------------------
+    if len(moveHist) > 0:
+        if fRepeat:  # if repeating paths, teleport into a random location
+            print('REPEATING PATHS...TELEPORTING TO A NEW LOCATION')
+            # posTemp = controller.last_event.metadata["agent"]['position']
+            # rotTemp = controller.last_event.metadata["agent"]['rotation']['y'z
+            # currentPos = {
+            #     'x': round(posTemp['x'], 2),
+            #     'z': round(posTemp['z'], 2),
+            #     'yaw': rotTemp
+            # }
+            # print("currentPos: " + str(currentPos))
+            # sceneSize = controller.last_event.metadata['sceneBounds']['size']
+            # sceneSize = math.sqrt(
+            #     math.pow(sceneSize['x'], 2) +
+            #     math.pow(sceneSize['z'], 2)
+            # )
+            # newPos = currentPos
+            # tempMoveHist = []
+            # for l in range(len(moveHist)):
+            #     tempMoveHist.append(moveHist)
+            #
+            # randomPositions = []
+            # for j in range(len(reachablePositions)):
+            #     dist = math.sqrt(
+            #         math.pow((reachablePositions[j][0] - currentPos['x']), 2) +
+            #         math.pow((reachablePositions[j][1] - currentPos['z']), 2)
+            #     )
+            #     if dist > 0.3 * sceneSize:
+            #         randomPositions.append(reachablePositions[j])
+            #
+            # while newPos in tempMoveHist:
+            #     'position in hist'
+            #     i = random.randint(0, len(randomPositions) - 1)
+            # x = randomPositions[i][0]
+            # z = randomPositions[i][1]
+            # yaw = random.randrange(0, 359, 45)
+            # newPos = {
+            #     'x': x,
+            #     'z': z,
+            #     'yaw': round(yaw)
+            # }
+            # print('teleporting to: ' + str(newPos))
+            # controller.step(
+            #     action="Teleport",
+            #     position=dict(x=newPos['x'], y=0.9, z=newPos['z']),
+            #     rotation=dict(x=0, y=newPos['yaw'], z=0)
+            # )
+            # u[10, 10] = random.choice([-1, 1])
+            # v[10, 10] = random.choice([-1, 1])
+        fRepeat = 0
 
     # ---------------------------------------------------------------------
     if fScat:  # update the velocity field with scatter direction
