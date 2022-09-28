@@ -3,7 +3,7 @@
 #
 # C McClurg, A Ayub, AR Wagner, S Rajtmajer
 # =============================================================================
-import multiprocessing as mp
+
 from sklearn.model_selection import train_test_split
 from data.functions import CBCL_WVS, CBCL_SVM, SVM_redistrict, SVM_simple
 from data.functions import update_centroids, aff_simple, aff_redistrict
@@ -16,11 +16,11 @@ import roboTHORController
 from ai2thor.controller import Controller
 import matplotlib
 matplotlib.use('TkAgg')
-import matplotlib.pyplot as plt
+
 
 # TODO try iTHOR environments since there's 120 of them
 # TODO try smaller step-size
-def trial(queue, pack):
+def trial(pack):
     # unpack
     pFileNo = pack[0]
     pMod = pack[1]
@@ -310,7 +310,6 @@ def trial(queue, pack):
         # topDown = topDownView.get_top_down_frame(controller)
         # plt.imshow(topDown, interpolation='nearest')
         # plt.show()
-
         reachablePositions = controller.step(
             action="GetReachablePositions"
         ).metadata["actionReturn"]
@@ -403,9 +402,7 @@ def trial(queue, pack):
             trainTime += addTime
 
         else:  # SVM
-
             train_t0 = np.round(time.time(), 3)
-
             # process images
             xNew = xLeftover.copy()
             yNew = yLeftover.copy()
@@ -468,78 +465,33 @@ def trial(queue, pack):
         output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc,
                   final_runTime,
                   final_runDist, final_trainTime, aClass]
-        print(output)
-        if queue is not None: queue.put(output)
-        time.sleep(0.1)
+        totalResult = []
+        ix = output[1]
+        totalResult[ix] = output
+        return totalResult
 
 if __name__ == "__main__":
 
-    # prepare pack for test
-    i = 0
-    testPack = []
-    for pDataName in ['grocery', 'cifar']:
-        for pMod in [1]:
-            for pSeed in range(10):
-                for pBiasType in ['classWt', 'random']:  # SVM_redistrict, SVM_uniform
-                    for pCBCL in ['WVS', 'SVM']:
-                        testPack.append([i, pMod, pSeed, pDataName, pBiasType, pCBCL])
-                        i += 1
-    totalResult = [[] for i in range(len(testPack))]
-
-    # multi-processing params
-    nProcs = 8
-    queue = mp.Queue()
-    processes = []
+    i = 0 # Don't change
+    pMod = 1 # Don't change
+    pSeed = 9 # [0,9]
+    pDataName = 'grocery' # 'grocery' or 'cifar'
+    pBiasType = 'classWt' # 'classWt' or 'random'
+    pCBCL = 'WVS' # 'WVS' or 'SVM'
+    testPack = [i, pMod, pSeed, pDataName, pBiasType, pCBCL]
 
     # create write path
     now = datetime.now()
     d0 = now.strftime('%m%d')
     d1 = now.strftime('%Y-%m%d')
     pNetType = 'resnet34'
-    FILENAME = './results/{}/{}_{}_malmotest.xlsx'.format(d0, d1, pNetType)
+    FILENAME = './results/{}/{}_{}_0_1_9_grocery_classWt_WVS.xlsx'.format(d0, d1, pNetType)
     try:
         os.mkdir('./results/{}'.format(d0))
     except:
         pass
 
-    # Populating the multiprocess queue until all testPacks are exhausted
-    while len(testPack):
-        # Populating the queue with as many testPacks as possible, while also checking whether the list has ended
-        for i in range(nProcs - len(processes)):
-            # Reassigning more testPacks to killed processes
-            if len(testPack):
-                processes.append(mp.Process(target=trial, args=(queue, testPack[0])))
-                print("Test pack assigned: ")
-                print(testPack[0])
-                testPack.pop(0)
-            else:
-                break
-        processes[0].start()
-        processes[0].join()
-        processes[1].start()
-        processes[1].join()
-        processes[2].start()
-        processes[2].join()
-        # Starting all the processes that are now populated with testPacks
-        # for process in processes:
-        #     print("starting a new process")
-        #     process.start()
-        #     process.join()
-
-
-        while queue.qsize() > 0:
-            print(queue.qsize())
-            iterResult = queue.get()
-            totalResult[ix] = singleResult
-            print(totalResult)
-            df = pd.DataFrame(totalResult,
-                              columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
-                                       'obsInc', 'accInc', 'runTimeInc',
-                                       'runDistInc', 'trainTimeInc', 'aClass'])
-            df.to_excel(FILENAME)
-            print(FILENAME)
-
-        while len(processes) > 0:
-            processes = [job for job in jobs if job.is_alive()]
-            print("Processes killed: " + nProcs - len(jobs))
-            time.sleep(1)
+    totalResult = trial(testPack)
+    df = pd.DataFrame(totalResult, columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
+                                            'obsInc', 'accInc', 'runTimeInc', 'runDistInc', 'trainTimeInc', 'aClass'])
+    df.to_excel()
