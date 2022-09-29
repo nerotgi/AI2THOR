@@ -481,7 +481,7 @@ if __name__ == "__main__":
     testPack = []
     for pMod in [1]:
         for pSeed in range(10):
-            for pDataName in ['grocery', 'cifar']:
+            for pDataName in ['cifar']:
                 for pBiasType in ['classWt', 'random']:  # SVM_redistrict, SVM_uniform
                     for pCBCL in ['WVS', 'SVM']:
                         testPack.append([i, pMod, pSeed, pDataName, pBiasType, pCBCL])
