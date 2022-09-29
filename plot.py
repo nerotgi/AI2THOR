@@ -15,11 +15,7 @@ plt.rcParams.update(plt.rcParamsDefault)
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
-fileName = "./results/"
-nameInput = input("fileName: ")
-while not exists(fileName+nameInput+".xlsx"):
-    nameInput = input("Error: File doesn't exist. Filename? ")
-fileName = fileName + nameInput + ".xlsx"
+fileName = "results/grocery.xlsx"
 df = pd.read_excel(fileName)
 df = df[df['status'] == 'complete']
 df = df[df['mod'] == 1]
@@ -57,11 +53,12 @@ for d in dList:
             temp = df[(df['data'] == d) & (df['learner'] == p) & (df['bias'] == b)]
 
             if len(temp) > 0:
-                x = np.array(list(temp.obsInc))
-                avg = np.mean(x, axis=0)
-                std = np.std(x, axis=0)
-                avg_obs.append(avg)
-                std_obs.append(std)
+                # x = np.array(list(temp.obsInc))
+                # print(x)
+                # avg = np.mean(x, axis=0)
+                # std = np.std(x, axis=0)
+                # avg_obs.append(avg)
+                # std_obs.append(std)
 
                 x = np.array(list(temp.accInc))
                 avg = np.mean(x, axis=0) * 100

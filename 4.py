@@ -465,33 +465,31 @@ def trial(pack):
         output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc,
                   final_runTime,
                   final_runDist, final_trainTime, aClass]
-        totalResult = []
-        ix = output[1]
-        totalResult[ix] = output
-        return totalResult
+        print(output)
+
+        # create write path
+        now = datetime.now()
+        d0 = now.strftime('%m%d')
+        d1 = now.strftime('%Y-%m%d')
+        pNetType = 'resnet34'
+        FILENAME = './results/{}/{}_{}_4.xlsx'.format(d0, d1, pNetType)
+        try:
+            os.mkdir('./results/{}'.format(d0))
+        except:
+            pass
+
+        df = pd.DataFrame([output], columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
+                                                'obsInc', 'accInc', 'runTimeInc', 'runDistInc', 'trainTimeInc',
+                                                'aClass'])
+        df.to_excel(FILENAME)
 
 if __name__ == "__main__":
 
     i = 0 # Don't change
     pMod = 1 # Don't change
     pSeed = 9 # [0,9]
-    pDataName = 'grocery' # 'grocery' or 'cifar'
-    pBiasType = 'classWt' # 'classWt' or 'random'
-    pCBCL = 'WVS' # 'WVS' or 'SVM'
+    pDataName = 'cifar' # 'grocery' or 'cifar'
+    pBiasType = 'random' # 'classWt' or 'random'
+    pCBCL = 'SVM' # 'WVS' or 'SVM'
     testPack = [i, pMod, pSeed, pDataName, pBiasType, pCBCL]
-
-    # create write path
-    now = datetime.now()
-    d0 = now.strftime('%m%d')
-    d1 = now.strftime('%Y-%m%d')
-    pNetType = 'resnet34'
-    FILENAME = './results/{}/{}_{}_0_1_9_grocery_classWt_WVS.xlsx'.format(d0, d1, pNetType)
-    try:
-        os.mkdir('./results/{}'.format(d0))
-    except:
-        pass
-
-    totalResult = trial(testPack)
-    df = pd.DataFrame(totalResult, columns=['status', 'no.', 'mod', 'seed', 'data', 'bias', 'learner', 'sceneName',
-                                            'obsInc', 'accInc', 'runTimeInc', 'runDistInc', 'trainTimeInc', 'aClass'])
-    df.to_excel()
+    trial(testPack)
