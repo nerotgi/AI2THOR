@@ -6,15 +6,18 @@ import pandas as pd
 import numpy as np
 from ast import literal_eval
 from datetime import datetime
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
 
 now = datetime.now()
 dtime = now.strftime('%m%d')
 
 plt.rcParams.update(plt.rcParamsDefault)
-plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
-df = pd.read_excel('./results/0927/partial.xlsx')
+df = pd.read_excel('./results/0929/full.xlsx')
 df = df[df['status'] == 'complete']
 df = df[df['mod'] == 1]
 df = df.iloc[:, 5:-1]
@@ -88,7 +91,7 @@ del x, avg, std, label, d, dList, p, pList, b, bList, temp
 # fig, ((ax1,ax2), (ax3,ax4)) = plt.subplots(2, 2, sharex = 'col', sharey = 'row', figsize=(10,7))
 fig, (ax1, ax2) = plt.subplots(1, 2, sharex='col', sharey='row', figsize=(10, 5))
 plt.rcParams.update(plt.rcParamsDefault)
-plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
 
@@ -100,10 +103,10 @@ def manual_plot(ax, x, y, e, pProps, pLabel):
     lin = pProps[1]
     mar = pProps[2]
     marSize = pProps[3]
-    if len(x) == 61:
-        skipper = 5
+    if len(x) == 241:
+        skipper = 20
     else:
-        skipper = 2
+        skipper = 8
 
     ax.plot(x, y, marker=mar, color=col, linestyle=lin, markersize=marSize, markevery=skipper, linewidth=1.5,
             label=pLabel, zorder=10, clip_on=False)
@@ -164,9 +167,9 @@ for i in range(len(labels)):
     d = d.lower()
 
     if d == 'cifar':
-        N = 61
+        N = 241
     else:
-        N = 31
+        N = 121
 
     x1 = avg_tRun[i][0:N]
     y1 = avg_acc[i][0:N]
