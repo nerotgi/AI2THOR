@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Working Ubuntu code">
-      <change afterPath="$PROJECT_DIR$/results/0927/2022-0927_resnet34_malmotest.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/0928/2022-0928_resnet34_malmotest.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/0928/full_grocery.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/0929/full_cifar.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0927/partial.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/0927/2022-0927_resnet34_malmotest.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/0928/2022-0928_resnet34_malmotest.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/0929/full.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/full.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +40,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/nero/PycharmProjects/AI2THOR",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="remote" branch="Ubuntu-v2.0" />
@@ -57,6 +55,9 @@
       <recent name="$PROJECT_DIR$/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results/0929" />
+      <recent name="$PROJECT_DIR$/results/0928" />
+      <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/data/features" />
     </key>
@@ -121,6 +122,8 @@
       <option name="presentableId" value="Default" />
       <updated>1663604607592</updated>
       <workItem from="1663604610299" duration="412000" />
+      <workItem from="1664456700070" duration="185000" />
+      <workItem from="1664456890499" duration="1034000" />
     </task>
     <task id="LOCAL-00001" summary="Added different rooms to the test">
       <created>1663822008164</created>
