@@ -2,23 +2,22 @@ import getBlock
 from matplotlib import pyplot as plt
 import pandas as pd
 
-def con_to_obs(controller):
+def con_to_obs(controller, triggerScan):
 
     objects = []
     # Getting all objects in view
     i = 0
-    while i in range(4):
-        # seg_frame = controller.last_event.frame
-        # dist_frame = controller.last_event.depth_frame
-        # plt.imshow(seg_frame, interpolation='nearest')
-        # plt.show()
-        # plt.imshow(dist_frame, interpolation='nearest')
-        # plt.show()
+    spin = 0
+    if triggerScan:
+        spin = 4
+    else:
+        spin = 1
+    while i in range(spin):
         for obj in controller.last_event.metadata["objects"]:
             if obj["visible"] == 1:
                 objects.append(obj)
-
-        controller.step(action="RotateRight")
+        if triggerScan:
+            controller.step(action="RotateRight")
         i = i + 1
 
     # Sorting the dictionary of all objects in view

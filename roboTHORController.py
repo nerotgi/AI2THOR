@@ -14,6 +14,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     start_time = time.time()
     nObsNewClass = [0 for i in range(len(pack[3]))]
     moveHist = []
+    triggerScan = 1
     path1 = [] # previous path
     path2 = [] # current path
     fig, ac = plt.subplots()
@@ -29,7 +30,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
         current_time = time.time()
         elapsed_time = current_time - start_time
         if elapsed_time > iTime:
-            print("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
+            # print("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
             break
 
         # position = [controller.last_event.metadata["agent"]["position"]['x'],
@@ -37,11 +38,19 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
         #             controller.last_event.metadata["agent"]["rotation"]["y"]]
 
         # Looking around
-        controller, step, blockMatrix, objects = conToObs.con_to_obs(controller)
+        controller, step, blockMatrix, objects = conToObs.con_to_obs(controller, triggerScan)
         # Creating potential field and getting path
         controller, path, homeFlag, obs, trainClass = obsToPath.obs_to_path(controller, blockMatrix, home_pos,
                                                                            xTrainWeights, (0, 0), homeFlag,
                                                                            pack[7], moveHist, reachablePositions)
+
+        # If object has just been trained on, look around before moving. Otherwise, keep moving in the direction
+        # it was moving before
+        if len(xTrainWeights) > 0:
+            triggerScan = 1
+        else:
+            triggerScan = 0
+
         for i in range(len(xTrainWeights)):
             if trainClass == i:
                 nObsNewClass[i] += 1
@@ -86,7 +95,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
                     action="MoveAhead",
                     moveMagnitude=step*5
                 )
-        print(step)
+        # print(step)
 
         # Moving the agent according to the potential field
         controller = pathToNav.path_to_nav(controller, step, path, moveHist)

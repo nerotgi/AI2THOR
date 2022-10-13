@@ -292,7 +292,7 @@ def trial(q, pack):
                    "FloorPlan_Train12_4", "FloorPlan_Train12_5"]
                   ]
 
-        print(scenes[collectionNum][sceneNum])
+        # print(scenes[collectionNum][sceneNum])
 
         controller = Controller(
             agentMode="locobot",
@@ -481,7 +481,7 @@ if __name__ == "__main__":
     testPack = []
     for pMod in [1]:
         for pSeed in range(10):
-            for pDataName in ['cifar']:
+            for pDataName in ['grocery', 'cifar']:
                 for pBiasType in ['classWt', 'random']:  # SVM_redistrict, SVM_uniform
                     for pCBCL in ['WVS', 'SVM']:
                         testPack.append([i, pMod, pSeed, pDataName, pBiasType, pCBCL])
@@ -489,7 +489,7 @@ if __name__ == "__main__":
     totalResult = [[] for i in range(len(testPack))]
 
     # multi-processing params
-    nProcs = 4
+    nProcs = 8
     q = Queue()
     pHandle = []
 

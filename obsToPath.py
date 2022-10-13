@@ -100,7 +100,7 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
 
     if len(objectsNearby) > 0 and not scatFlag[0] and not homeFlag:
         trainClass = objectsNearby[itemNo]
-        print('learning class {}'.format(trainClass))
+        # print('learning class {}'.format(trainClass))
         trainFlag = (trainClass, 1)
 
     # create velocity field
@@ -196,9 +196,9 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
     # Check different cases of agent status (home, scatter, move, train, repeat)
 
     # ---------------------------------------------------------------------
-    if len(moveHist) > 0:
-        if fRepeat:  # if repeating paths, teleport into a random location
-            print('REPEATING PATHS...TELEPORTING TO A NEW LOCATION')
+    # if len(moveHist) > 0:
+    #     if fRepeat:  # if repeating paths, teleport into a random location
+            # print('REPEATING PATHS...TELEPORTING TO A NEW LOCATION')
             # posTemp = controller.last_event.metadata["agent"]['position']
             # rotTemp = controller.last_event.metadata["agent"]['rotation']['y'z
             # currentPos = {
@@ -245,11 +245,11 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
             # )
             # u[10, 10] = random.choice([-1, 1])
             # v[10, 10] = random.choice([-1, 1])
-        fRepeat = 0
+        # fRepeat = 0
 
     # ---------------------------------------------------------------------
     if fScat:  # update the velocity field with scatter direction
-        print('SCATTER')
+        # print('SCATTER')
         x = np.arange(-10, 11, nskip)
         z = np.arange(-10, 11, nskip)
         X, Z = np.meshgrid(x, z)
@@ -272,7 +272,7 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
 
     # ---------------------------------------------------------------------
     elif fHome:  # update velocity field with home direction
-        print('HOME')
+        # print('HOME')
         controller.step(
             action="Teleport",
             position=dict(x=iPos[0], y=0.9, z=iPos[1]),
@@ -309,17 +309,17 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
                     for j in range(len(z)):
                         u[i][j] += 0
                         v[i][j] += dz / np.abs(dz)
-    elif fTrain:
-        print('TRAIN')
+    # elif fTrain:
+        # print('TRAIN')
 
     # ---------------------------------------------------------------------
     elif not fMove and not fRepeat:  # try to get out of the minima
-        print('SCRAMBLE')
+        # print('SCRAMBLE')
         u[10, 10] = random.choice([-1, 1])
         v[10, 10] = random.choice([-1, 1])
 
-    else:
-        print('MOVE')
+    # else:
+        # print('MOVE')
     # ---------------------------------------------------------------------
 
     homeFlag = fHome

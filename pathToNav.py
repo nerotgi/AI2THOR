@@ -3,7 +3,7 @@ import math
 import random
 
 def path_to_nav(controller, step, path, moveHist):
-    print('Path: ' + str(path))
+    # print('Path: ' + str(path))
     angle = 0
     arctanCheck = 0
     finalAngle = 0  # Angle robot faces before moving
