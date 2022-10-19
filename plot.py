@@ -17,7 +17,7 @@ plt.rcParams.update(plt.rcParamsDefault)
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
-df = pd.read_excel('./results/0929/full.xlsx')
+df = pd.read_excel('./results/1013/2022-1013_resnet34_malmotest.xlsx')
 df = df[df['status'] == 'complete']
 df = df[df['mod'] == 1]
 df = df.iloc[:, 5:-1]

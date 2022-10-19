@@ -7,9 +7,9 @@
 from multiprocess import Process, Queue
 from sklearn.model_selection import train_test_split
 # from utils import functions
-from asdf.functions import CBCL_WVS, CBCL_SVM, SVM_redistrict, SVM_simple
-from asdf.functions import update_centroids, aff_simple, aff_redistrict
-from asdf.get_incremental import incrementalData
+from utilities.functions import CBCL_WVS, CBCL_SVM, CBCL_PR, SVM_redistrict, SVM_simple
+from utilities.functions import update_centroids, aff_simple, aff_redistrict
+from utilities.get_incremental import incrementalData
 from datetime import datetime
 import pandas as pd
 import numpy as np
@@ -25,8 +25,8 @@ def trial(q, pack):
     pMod = pack[1]
     pSeed = pack[2]
     pDataName = pack[3]
-    pBiasType = pack[4]
-    pCBCL = pack[5]
+    pLearner = pack[4]
+    pBias = pack[5]
 
     # model parameters
     pNetType = 'resnet34'  # CNN type
@@ -39,7 +39,7 @@ def trial(q, pack):
     random.seed(pSeed)
 
     # read visual features
-    readFile = './asdf/features/' + pDataName + '_' + pNetType + '_' + pNetFit + '_'
+    readFile = './utilities/features/' + pDataName + '_' + pNetType + '_' + pNetFit + '_'
     with open(readFile + 'train_features.data', 'rb') as fh:
         trainFeatRGB = pickle.load(fh)
     with open(readFile + 'test_features.data', 'rb') as fh:
@@ -106,6 +106,8 @@ def trial(q, pack):
     # initialize
     centClass = [[] for x in range(nClassTotal)]  # centroids per class
     centWtClass = [[] for x in range(nClassTotal)]  # centroid wt per class
+    centStdClass = [[] for x in range(nClassTotal)]  # centroid std per class
+    covaClass = [[] for x in range(nClassTotal)]  # covariance matrices per class
     nShotClass = [0 for x in range(nClassTotal)]  # image count per class
     weightClass = [0 for x in range(nClassTotal)]  # weight per class
     rAccClass = [0 for x in range(nClassTotal)]  # test accuracy per class
@@ -128,7 +130,7 @@ def trial(q, pack):
         else:
             needs_corrected = False
 
-    if ('SVM_' not in pBiasType):  # CBCL
+    if pLearner != 'SVM':  # CBCL
         xTrainCurr = []
         yTrainCurr = []
         for iClass in range(len(biasClass)):
@@ -152,8 +154,8 @@ def trial(q, pack):
                             fReplace = False
 
         # create centroids
-        pack = [xTrainCurr, yTrainCurr, centClass, centWtClass, pDistLim, pDistMetric]
-        [centClass, centWtClass] = update_centroids(pack)
+        pack = [xTrainCurr, yTrainCurr, centClass, centWtClass, pDistLim, pDistMetric, covaClass, centStdClass]
+        [centClass, centWtClass, covaClass, centStdClass] = update_centroids(pack)
 
         # count centroids
         nCentTotal = 0
@@ -169,11 +171,13 @@ def trial(q, pack):
 
         # make new predictions
         rAccClass0 = rAccClass.copy()
-        pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric]
-        if pCBCL == 'WVS':
+        pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric, covaClass, centStdClass]
+        if pLearner == 'CBCLWVS':
             rAcc, rAccClass = CBCL_WVS(pack)
-        else:
+        elif pLearner == 'CBCLSVM':
             rAcc, rAccClass = CBCL_SVM(pack)
+        else:
+            rAcc, rAccClass = CBCL_PR(pack)
 
 
     else:  # SVM
@@ -211,7 +215,7 @@ def trial(q, pack):
                             fReplace = False
 
         # learn and make predictions
-        if pBiasType == 'SVM_redistrict':
+        if pBias == 'redistrict':
             rAccClass0 = rAccClass.copy()
             rAcc, rAccClass, prevSplit, redClass = SVM_redistrict(xTrainBatch, yTrainBatch,
                                                                   xNew, yNew, xTestTot, yTestTot,
@@ -323,6 +327,7 @@ def trial(q, pack):
         home_pos = [x, z, yaw]
 
         print(str(iInc + 1) + ' of ' + str(pInc))
+
         # count available
         nTrainSimClass = [len(x) for x in xTrainTot]
         nClassEmpty = 0
@@ -331,12 +336,10 @@ def trial(q, pack):
             if nTempClass == 0: nClassEmpty += 1
 
         # affinity for searching
-        if pBiasType == 'SVM_redistrict':
+        if pBias == 'redistrict':
             aClass = aff_redistrict(nShotClass, redClass, iInc, pMod)
-        elif pBiasType == 'SVM_uniform':
-            aClass = aff_simple('random', centWtClass, rAccClass, rAccClass0, pMod)
         else:
-            aClass = aff_simple(pBiasType, centWtClass, rAccClass, rAccClass0, pMod)
+            aClass = aff_simple(pBias, centWtClass, centStdClass, rAccClass, rAccClass0, pMod)
 
         # collect images in RoboTHOR simulation
         pack = [pSeed, iPos, aClass, nObsTotClass, nTrainSimClass, 0, pRestock, pDataName, pFileNo, iInc]
@@ -355,7 +358,7 @@ def trial(q, pack):
         nObsTotClass = nObsTotClass + np.array(nTrainNewClass)
         nObsTotClass = list(nObsTotClass)
 
-        if 'SVM_' not in pBiasType:  # CBCL
+        if pLearner != 'SVM':  # CBCL
 
             train_t0 = np.round(time.time(), 2)
 
@@ -376,8 +379,8 @@ def trial(q, pack):
                         nObsNew += 1
 
             # update centroids
-            pack = [xTrainCurr, yTrainCurr, centClass, centWtClass, pDistLim, pDistMetric]
-            [centClass, centWtClass] = update_centroids(pack)
+            pack = [xTrainCurr, yTrainCurr, centClass, centWtClass, pDistLim, pDistMetric, covaClass, centStdClass]
+            [centClass, centWtClass, covaClass, centStdClass] = update_centroids(pack)
 
             # count total centroids
             nCentTotal = 0
@@ -393,11 +396,14 @@ def trial(q, pack):
 
             # make new predictions
             rAccClass0 = rAccClass.copy()
-            pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric]
-            if pCBCL == 'WVS':
+            pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric, covaClass,
+                    centWtClass]
+            if pLearner == 'CBCLWVS':
                 rAcc, rAccClass = CBCL_WVS(pack)
-            else:
+            elif pLearner == 'CBCLSVM':
                 rAcc, rAccClass = CBCL_SVM(pack)
+            else:
+                rAcc, rAccClass = CBCL_PR(pack)
 
             train_t1 = np.round(time.time(), 2)
             addTime = (train_t1 - train_t0)
@@ -427,7 +433,7 @@ def trial(q, pack):
                         nObsNew += 1
 
             # learn and make predictions
-            if pBiasType == 'SVM_redistrict':
+            if pBias == 'redistrict':
 
                 if nObsNew < 10 and nObsLeftover == 0:  # too few observations, save what you have and don't train
                     xLeftover = xNew.copy()
@@ -466,7 +472,7 @@ def trial(q, pack):
 
         sceneNames.append(scenes[collectionNum][sceneNum])
         if iInc == (pInc - 1): pStatus = 'complete'
-        output = [pStatus, pFileNo, pMod, pSeed, pDataName, pBiasType, pCBCL, sceneNames, final_obs, final_acc, final_runTime,
+        output = [pStatus, pFileNo, pMod, pSeed, pDataName, pLearner, pBias, sceneNames, final_obs, final_acc, final_runTime,
                   final_runDist, final_trainTime, aClass]
         if q is not None: q.put(output)
         time.sleep(0.1)
@@ -479,17 +485,22 @@ if __name__ == "__main__":
     # prepare pack for test
     i = 0
     testPack = []
+
     for pMod in [1]:
         for pSeed in range(10):
             for pDataName in ['grocery', 'cifar']:
-                for pBiasType in ['classWt', 'random']:  # SVM_redistrict, SVM_uniform
-                    for pCBCL in ['WVS', 'SVM']:
-                        testPack.append([i, pMod, pSeed, pDataName, pBiasType, pCBCL])
+                for pLearner in ['CBCLPR', 'CBCLSVM']:
+                    for pBias in ['classWt', 'uniform', 'clusterWt', 'clusterStdLow', 'clusterStdHigh']:
+                        testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
                         i += 1
-    totalResult = [[] for i in range(len(testPack))]
+                for pLearner in ['SVM']:
+                    for pBias in ['uniform', 'redistrict']:
+                        testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
+                        i += 1
 
+    totalResult = [[] for j in range(i)]
     # multi-processing params
-    nProcs = 8
+    nProcs = 4
     q = Queue()
     pHandle = []
 
@@ -498,7 +509,7 @@ if __name__ == "__main__":
     d0 = now.strftime('%m%d')
     d1 = now.strftime('%Y-%m%d')
     pNetType = 'resnet34'
-    FILENAME = './results/{}/{}_{}_malmotest.xlsx'.format(d0, d1, pNetType)
+    FILENAME = './results/{}/{}_{}_malmotest_cifar.xlsx'.format(d0, d1, pNetType)
     try:
         os.mkdir('./results/{}'.format(d0))
     except:
