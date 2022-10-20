@@ -1,111 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Script fully working including adaptation to new learners and biases.">
-      <change afterPath="$PROJECT_DIR$/results/charts/10_20_2022/18_35_05_robothor_partial_more_biases.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_19_2022/partial.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_20_2022/2022-1020_resnet34_malmotest_cifar.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FloorPlan_Train1_1/sceneBounds" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conToObs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/robothor/conToObs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/conceptnet.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/img/astar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/img/items0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/img/items1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/img/items2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/img/map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/img/map_withLegend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/map.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/maze.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/plot_items.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/plot_maze.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/plot_survey.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/truth.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/robothor_to_cifar_BACKUP.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/robothor_to_grocery_BACKUP.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/debug/debug_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env1_dataRef.zip" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_sim_data/env1_dataRef.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env1_getXML.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_sim_data/env1_getXML.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env2_dataRef.zip" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_sim_data/env2_dataRef.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env2_getXML.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_sim_data/env2_getXML.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getBlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/robothor/getBlock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/debug/roboThor_testing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsToNav.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obsToPath.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/robothor/obsToPath.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathToNav.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/robothor/pathToNav.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_results/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0817/2022-0817_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/08_17_2022/2022-0817_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0904/2022-0904_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_04_2022/2022-0904_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0908/2022-0908_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_08_2022/2022-0908_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0913/2022-0913_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_13_2022/2022-0913_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0914/2022-0914_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_14_2022/2022-0914_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0923/2022-0923_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_23_2022/2022-0923_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0923_chris.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0926/2022-0926_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_26_2022/2022-0926_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0928/full_grocery.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_28_2022/full_grocery.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0929/full.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_29_2022/full.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/0929/full_cifar.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/09_29_2022/full_cifar.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1013/2022-1013_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/10_13_2022/2022-1013_resnet34_malmotest.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1019/partial.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1020/2022-1020_resnet34_debug.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/10_20_2022/2022-1020_resnet34_debug.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/figure/0926_robothor.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/charts/09_26_2022/0926_robothor_120s_iterations.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/figure/0930_robothor.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/charts/09_30_2022/0930_robothor_30s_iterations.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/figure/1013_robothor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/figure/1014_robothor.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/charts/10_14_2022/1014_robothor_scan_implementation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/figure/1015_robothor.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/charts/10_15_2022/1015_robothor_scan_implementation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/figure/partial_1020.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/figure/partial_30s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roboTHORController.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/robothor/roboTHORController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/data/villages_nether.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM-1/region/r.1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/data/villages_end.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/DIM1/region/r.1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/Die W„„„lt.1360362259238.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/data/Village.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/data/villages.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/level.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/level.dat_mcr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/level.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/playerdata/2a0c291d-fdc0-3764-a63a-7eea53f90ac8.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/playerdata/5627dd98-e6be-3c21-b8a8-e92344183641.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/playerdata/8c15ca8d-a7cb-4187-9411-ede0344b3363.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/Ganzer.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/Pilli.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/Player.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/players/niki2011.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-1.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.-2.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.0.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.1.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.2.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/region/r.2.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/session.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/stats/2a0c291d-fdc0-3764-a63a-7eea53f90ac8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/stats/5627dd98-e6be-3c21-b8a8-e92344183641.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small_town/stats/8c15ca8d-a7cb-4187-9411-ede0344b3363.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topDownView.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/debug/topDownView.py" afterDir="false" />
-    </list>
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Cleaned" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,7 +144,7 @@
       <workItem from="1666223152671" duration="60000" />
       <workItem from="1666223219810" duration="3662000" />
       <workItem from="1666286580704" duration="4310000" />
-      <workItem from="1666303363604" duration="2784000" />
+      <workItem from="1666303363604" duration="3300000" />
     </task>
     <task id="LOCAL-00001" summary="Added different rooms to the test">
       <created>1663822008164</created>
@@ -418,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666303341695</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Cleaned">
+      <created>1666306260267</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1666306260267</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +361,8 @@
     <MESSAGE value="CBCL-PR updates from Chris' updates" />
     <MESSAGE value="Partial results with Chris' updates" />
     <MESSAGE value="Script fully working including adaptation to new learners and biases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Script fully working including adaptation to new learners and biases." />
+    <MESSAGE value="Cleaned" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1666305891787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
