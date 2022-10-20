@@ -136,7 +136,6 @@ def CBCL_PR(pack):
 
     i = 0
     for item in centWtClass:
-        # print(str(i) + ". " + str(item) + ", type: " + str(type(item)))
         i += 1
 
     for iClass in range(nClassTotal):
@@ -186,7 +185,6 @@ def update_centroids(pack):
     pDistMetric = pack[5]
     covaClass = pack[6]
     centStdClass = pack[7]
-    # print("ytrainCurr: " + str(yTrainCurr))
 
     for i in range(len(yTrainCurr)):
         iClass = yTrainCurr[i]
@@ -241,7 +239,6 @@ def update_centroids(pack):
         centWtClass[iClass] = tempCentWts
         covaClass[iClass] = tempCovas
         centStdClass[iClass] = tempStds
-
     return [centClass, centWtClass, covaClass, centStdClass]
 
 
@@ -296,7 +293,7 @@ def aff_simple(pBiasType, centWtClass, centStdClass, rAccClass, rAccClass0, pMod
         classFix = np.min([x for x in clusterStd if x > 0])
         working = [x if x != 0 else classFix for x in clusterStd]
 
-        # #uniform
+    # #uniform
     # elif pBiasType == 'uniform':
     #     working = [1 for x in range(nClassTotal)]
     #     pMod = 5
@@ -346,7 +343,6 @@ def aff_simple(pBiasType, centWtClass, centStdClass, rAccClass, rAccClass0, pMod
     for ix in tempIx: aClass[ix] = int(-20)
 
     return aClass
-
 
 def aff_redistrict(nShotClass, redClass, iInc, pMod):
     nClassTotal = len(redClass)

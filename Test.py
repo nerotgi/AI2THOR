@@ -37,7 +37,6 @@ def trial(q, pack):
     # model random
     np.random.seed(pSeed)
     random.seed(pSeed)
-
     # read visual features
     readFile = './utilities/features/' + pDataName + '_' + pNetType + '_' + pNetFit + '_'
     with open(readFile + 'train_features.data', 'rb') as fh:
@@ -171,7 +170,7 @@ def trial(q, pack):
 
         # make new predictions
         rAccClass0 = rAccClass.copy()
-        pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric, covaClass, centStdClass]
+        pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric, covaClass, centWtClass]
         if pLearner == 'CBCLWVS':
             rAcc, rAccClass = CBCL_WVS(pack)
         elif pLearner == 'CBCLSVM':

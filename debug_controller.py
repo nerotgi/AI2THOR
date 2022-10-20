@@ -28,6 +28,14 @@ def trial(q, pack):
     pLearner = pack[4]
     pBias = pack[5]
 
+
+    print("iteration: ")
+    print("seed: " + str(pSeed))
+    print("pDataName: " + pDataName)
+    print("pLearner: " + pLearner)
+    print("pBias: " + pBias)
+    print()
+
     # model parameters
     pNetType = 'resnet34'  # CNN type
     pNetFit = 'imagenet'  # dataset for CNN training
@@ -171,7 +179,7 @@ def trial(q, pack):
 
         # make new predictions
         rAccClass0 = rAccClass.copy()
-        pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric, covaClass, centStdClass]
+        pack = [xTestTot, yTestTot, centClass, pCentroidPred, nClassTotal, weightClass, pDistMetric, covaClass, centWtClass]
         if pLearner == 'CBCLWVS':
             rAcc, rAccClass = CBCL_WVS(pack)
         elif pLearner == 'CBCLSVM':

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="CBCL-PR updates from Chris' updates">
-      <change afterPath="$PROJECT_DIR$/debug_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/figure/1020_robothor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Test.xml" afterDir="false" />
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Partial results with Chris' updates">
+      <change afterPath="$PROJECT_DIR$/results/1020/2022-1020_resnet34_debug.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1019/.~lock.2022-1019_resnet34_malmotest_cifar.xlsx#" beforeDir="false" afterPath="$PROJECT_DIR$/results/1019/.~lock.2022-1019_resnet34_malmotest_cifar.xlsx#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1019/2022-1019_resnet34_malmotest_cifar.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/1019/2022-1019_resnet34_malmotest_cifar.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/1019/2022-1019_resnet34_malmotest_cifar.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/1019/partial.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,17 +52,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/nero/Projects/AI2THOR/debug_controller.py",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nero/Projects/AI2THOR/debug_controller.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="remote" branch="Ubuntu-v2.0" />
@@ -83,7 +81,7 @@
       <recent name="$PROJECT_DIR$/data/features" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.plot">
+  <component name="RunManager" selected="Python.Test">
     <configuration name="debug_controller" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="AI2THOR" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,7 +150,8 @@
       <workItem from="1666223055232" duration="36000" />
       <workItem from="1666223098205" duration="47000" />
       <workItem from="1666223152671" duration="60000" />
-      <workItem from="1666223219810" duration="3415000" />
+      <workItem from="1666223219810" duration="3662000" />
+      <workItem from="1666286580704" duration="4236000" />
     </task>
     <task id="LOCAL-00001" summary="Added different rooms to the test">
       <created>1663822008164</created>
@@ -301,7 +300,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666208667602</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Partial results with Chris' updates">
+      <created>1666265992239</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1666265992239</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Partial results with Chris' updates">
+      <created>1666266106690</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1666266106690</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,11 +352,12 @@
     <MESSAGE value="Full charts generated" />
     <MESSAGE value="Testing scan, created new venv for project" />
     <MESSAGE value="CBCL-PR updates from Chris' updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="CBCL-PR updates from Chris' updates" />
+    <MESSAGE value="Partial results with Chris' updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partial results with Chris' updates" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1666242419454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666230851185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AI2THOR$debug_controller.coverage" NAME="debug_controller Coverage Results" MODIFIED="1666221465934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1666287148496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666303262019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$debug_controller.coverage" NAME="debug_controller Coverage Results" MODIFIED="1666302640248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
