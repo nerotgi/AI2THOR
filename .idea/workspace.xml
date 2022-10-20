@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Testing scan, created new venv for project">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/figure/1013_robothor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/figure/1014_robothor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/figure/1015_robothor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/figure/partial_30s.png" afterDir="false" />
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="CBCL-PR updates from Chris' updates">
+      <change afterPath="$PROJECT_DIR$/debug_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/figure/1020_robothor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/data/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/data/help.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/block.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/env/block.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/cifar-labels.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/env/cifar-labels.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/cifar-mapping.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/env/cifar-mapping.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/grocery-labels.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/env/grocery-labels.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/grocery-mapping.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/env/grocery-mapping.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/env/layout.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/env/layout.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_test_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/cifar_resnet34_imagenet_test_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_test_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/cifar_resnet34_imagenet_test_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_train_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/cifar_resnet34_imagenet_train_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/cifar_resnet34_imagenet_train_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/cifar_resnet34_imagenet_train_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_test_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/grocery_resnet34_imagenet_test_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_test_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/grocery_resnet34_imagenet_test_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_train_features.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/grocery_resnet34_imagenet_train_features.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/features/grocery_resnet34_imagenet_train_labels.data" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/features/grocery_resnet34_imagenet_train_labels.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_env-cifar.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/get_env-cifar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_env-grocery.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/get_env-grocery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/get_features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdf/get_incremental.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/get_incremental.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1013/2022-1013_resnet34_malmotest.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/1013/2022-1013_resnet34_malmotest.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/1019/.~lock.2022-1019_resnet34_malmotest_cifar.xlsx#" beforeDir="false" afterPath="$PROJECT_DIR$/results/1019/.~lock.2022-1019_resnet34_malmotest_cifar.xlsx#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/1019/2022-1019_resnet34_malmotest_cifar.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/1019/2022-1019_resnet34_malmotest_cifar.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,17 +54,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nero/Projects/AI2THOR&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/nero/Projects/AI2THOR/debug_controller.py",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="remote" branch="Ubuntu-v2.0" />
@@ -103,7 +83,7 @@
       <recent name="$PROJECT_DIR$/data/features" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Test">
+  <component name="RunManager" selected="Python.plot">
     <configuration name="debug_controller" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="AI2THOR" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,9 +91,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.8" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -168,7 +148,11 @@
       <workItem from="1665639934562" duration="5000" />
       <workItem from="1665639960213" duration="2404000" />
       <workItem from="1665646768323" duration="8877000" />
-      <workItem from="1666206548837" duration="1846000" />
+      <workItem from="1666206548837" duration="10556000" />
+      <workItem from="1666223055232" duration="36000" />
+      <workItem from="1666223098205" duration="47000" />
+      <workItem from="1666223152671" duration="60000" />
+      <workItem from="1666223219810" duration="3415000" />
     </task>
     <task id="LOCAL-00001" summary="Added different rooms to the test">
       <created>1663822008164</created>
@@ -310,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665648498219</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="CBCL-PR updates from Chris' updates">
+      <created>1666208667602</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1666208667602</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,10 +338,12 @@
     <MESSAGE value="Working Ubuntu code" />
     <MESSAGE value="Full charts generated" />
     <MESSAGE value="Testing scan, created new venv for project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing scan, created new venv for project" />
+    <MESSAGE value="CBCL-PR updates from Chris' updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="CBCL-PR updates from Chris' updates" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1665876715080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666208335791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1666242419454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666230851185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$debug_controller.coverage" NAME="debug_controller Coverage Results" MODIFIED="1666221465934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

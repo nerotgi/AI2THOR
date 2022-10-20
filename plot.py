@@ -17,7 +17,7 @@ plt.rcParams.update(plt.rcParamsDefault)
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
-df = pd.read_excel('./results/1013/2022-1013_resnet34_malmotest.xlsx')
+df = pd.read_excel('./results/1019/2022-1019_resnet34_malmotest_cifar.xlsx')
 df = df[df['status'] == 'complete']
 df = df[df['mod'] == 1]
 df = df.iloc[:, 5:-1]
@@ -28,8 +28,8 @@ df.runTimeInc = df.runTimeInc.apply(literal_eval)
 df.runDistInc = df.runDistInc.apply(literal_eval)
 
 dList = list(set(df['data']))
-pList = list(set(df['learner']))
-bList = list(set(df['bias']))
+pList = list(set(df['bias']))
+bList = list(set(df['learner']))
 
 avg_acc = []
 avg_obs = []
@@ -51,7 +51,7 @@ for d in dList:
     for p in pList:
         for b in bList:
 
-            temp = df[(df['data'] == d) & (df['learner'] == p) & (df['bias'] == b)]
+            temp = df[(df['data'] == d) & (df['bias'] == p) & (df['learner'] == b)]
 
             if len(temp) > 0:
                 x = np.array(list(temp.obsInc))
@@ -126,19 +126,17 @@ def get_props(name, d):
     aqua = sns.color_palette()[9]
     black = 'black'
 
-    name = 'CBCL-' + name
-
-    if name == 'CBCL-SVM low class weight':
+    if name == 'CBCLSVM low class weight':
         ans = [blue, '-.', 's']
-    elif name == 'CBCL-SVM uniform':
+    elif name == 'CBCLSVM uniform':
         ans = [green, '--', 'o']
-    elif name == 'CBCL-SVM low cluster weight':
+    elif name == 'CBCLSVM low cluster weight':
         ans = [purple, ':', '^']
-    elif name == 'CBCL-WVS low class weight':
+    elif name == 'CBCLSVM clusterStdLow':
         ans = [orange, '-.', 's']
-    elif name == 'CBCL-WVS uniform':
+    elif name == 'CBCLSVM clusterStdHigh':
         ans = [red, '--', 'o']
-    elif name == 'CBCL-WVS low cluster weight':
+    elif name == 'SVM uniform':
         ans = [grey, ':', '^']
     else:
         ans = []
@@ -208,7 +206,7 @@ ax1.set_ylabel('Test Prediction Accuracy (%)', fontweight='bold', size=9)
 ax1.set_xlabel('Search Time (min)', fontweight='bold', size=9)
 ax2.set_xlabel('Search Time (min)', fontweight='bold', size=9)
 
-ax1.set_ylim([0, 50])
+ax1.set_ylim([0, 65])
 ax1.set_xlim([0, 125])
 ax2.set_xlim([0, 62.5])
 

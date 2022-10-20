@@ -134,6 +134,11 @@ def CBCL_PR(pack):
     yTrain = []
     nPsuedoPerClass = 40
 
+    i = 0
+    for item in centWtClass:
+        # print(str(i) + ". " + str(item) + ", type: " + str(type(item)))
+        i += 1
+
     for iClass in range(nClassTotal):
         ones_count = centWtClass[iClass].count(1)
         req_samples = nPsuedoPerClass - ones_count
@@ -181,6 +186,7 @@ def update_centroids(pack):
     pDistMetric = pack[5]
     covaClass = pack[6]
     centStdClass = pack[7]
+    # print("ytrainCurr: " + str(yTrainCurr))
 
     for i in range(len(yTrainCurr)):
         iClass = yTrainCurr[i]

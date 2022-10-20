@@ -487,19 +487,24 @@ if __name__ == "__main__":
 
     for pMod in [1]:
         for pSeed in range(10):
-            for pDataName in ['grocery', 'cifar']:
-                for pLearner in ['CBCLPR', 'CBCLSVM']:
-                    for pBias in ['classWt', 'uniform', 'clusterWt', 'clusterStdLow', 'clusterStdHigh']:
+            for pDataName in ['grocery']:
+                for pLearner in ['CBCLPR']:
+                    for pBias in ['classWt']:
                         testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
                         i += 1
-                for pLearner in ['SVM']:
-                    for pBias in ['uniform', 'redistrict']:
-                        testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
-                        i += 1
+            # for pDataName in ['grocery', 'cifar']:
+            #     for pLearner in ['CBCLPR', 'CBCLSVM']:
+            #         for pBias in ['classWt', 'uniform', 'clusterWt', 'clusterStdLow', 'clusterStdHigh']:
+            #             testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
+            #             i += 1
+            #     for pLearner in ['SVM']:
+            #         for pBias in ['uniform', 'redistrict']:
+            #             testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
+            #             i += 1
 
     totalResult = [[] for j in range(i)]
     # multi-processing params
-    nProcs = 5
+    nProcs = 1
     q = Queue()
     pHandle = []
 
@@ -508,7 +513,7 @@ if __name__ == "__main__":
     d0 = now.strftime('%m%d')
     d1 = now.strftime('%Y-%m%d')
     pNetType = 'resnet34'
-    FILENAME = './results/{}/{}_{}_malmotest_cifar.xlsx'.format(d0, d1, pNetType)
+    FILENAME = './results/{}/{}_{}_debug.xlsx'.format(d0, d1, pNetType)
     try:
         os.mkdir('./results/{}'.format(d0))
     except:
