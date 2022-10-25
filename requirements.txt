@@ -1,0 +1,6 @@
+multiprocess
+sklearn
+pandas
+matplotlib
+seaborn
+ai2thor
