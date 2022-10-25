@@ -2,9 +2,9 @@ import time
 from matplotlib import pyplot as plt
 import pandas as pd
 import random
-import scripts.robothor.conToObs
-import scripts.robothor.obsToPath
-import scripts.robothor.pathToNav
+import scripts.robothor.conToObs as conToObs
+import scripts.robothor.obsToPath as obsToPath
+import scripts.robothor.pathToNav as pathToNav
 
 def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     iTime = 30
@@ -98,8 +98,6 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
         # Moving the agent according to the potential field
         controller = pathToNav.path_to_nav(controller, step, path, moveHist)
         path = 0
-        df1 = pd.DataFrame(moveHist)
-        df1.to_excel(excel_writer="~/Desktop/temp/moveHist.xlsx")
         iDist = iDist + step
 
     return [controller.last_event.metadata["agent"]["position"]['x'],

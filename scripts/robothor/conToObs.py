@@ -1,4 +1,4 @@
-import scripts.robothor.getBlock
+import scripts.robothor.getBlock as getBlock
 
 
 def con_to_obs(controller, triggerScan):
