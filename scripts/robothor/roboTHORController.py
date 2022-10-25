@@ -2,9 +2,9 @@ import time
 from matplotlib import pyplot as plt
 import pandas as pd
 import random
-import conToObs
-import obsToPath
-import pathToNav
+import scripts.robothor.conToObs
+import scripts.robothor.obsToPath
+import scripts.robothor.pathToNav
 
 def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     iTime = 30
