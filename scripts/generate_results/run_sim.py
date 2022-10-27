@@ -298,6 +298,7 @@ def trial(q, pack):
 
         controller = Controller(
             agentMode="locobot",
+            quality='Very Low',
             visibilityDistance=5.0,
             scene=scenes[collectionNum][sceneNum],
             gridSize=0.01,
@@ -306,8 +307,8 @@ def trial(q, pack):
             rotateGaussianSigma=0.1,
             renderInstanceSegmentation=True,
             renderDepthImage=True,
-            width=300,
-            height=300,
+            width=30,
+            height=30,
             fieldOfView=60
         )
         # topDown = topDownView.get_top_down_frame(controller)
@@ -342,9 +343,10 @@ def trial(q, pack):
         # collect images in RoboTHOR simulation
         pack = [pSeed, iPos, aClass, nObsTotClass, nTrainSimClass, 0, pRestock, pDataName, pFileNo, iInc]
         # mcTicks is a leftover artifact from Malmo test. Its value is irrelevant.
-        iPos, mcTicks, iDist, iTime, nObsNewClass = roboTHORController.robo_thor_controller(pack, controller,
+        iPos, mcTicks, iDist, iTime, nObsNewClass, actions = roboTHORController.robo_thor_controller(pack, controller,
                                                                                             reachablePositions,
                                                                                             home_pos)
+        print(actions)
         controller.stop()
         controller.stop_unity()
         runDist += iDist
@@ -483,10 +485,22 @@ if __name__ == "__main__":
     i = 0
     testPack = []
 
+    # for pMod in [1]:
+    #     for pSeed in range(10):
+    #         for pDataName in ['grocery', 'cifar']:
+    #             for pLearner in ['CBCLPR', 'CBCLSVM']:
+    #                 for pBias in ['classWt', 'uniform', 'clusterWt', 'clusterStdLow', 'clusterStdHigh']:
+    #                     testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
+    #                     i += 1
+    #             for pLearner in ['SVM']:
+    #                 for pBias in ['uniform', 'redistrict']:
+    #                     testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
+    #                     i += 1
+
     for pMod in [1]:
         for pSeed in range(10):
             for pDataName in ['grocery', 'cifar']:
-                for pLearner in ['CBCLPR', 'CBCLSVM']:
+                for pLearner in ['CBCLPR']:
                     for pBias in ['classWt', 'uniform', 'clusterWt', 'clusterStdLow', 'clusterStdHigh']:
                         testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
                         i += 1

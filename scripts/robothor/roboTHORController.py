@@ -13,6 +13,7 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
     nObsNewClass = [0 for i in range(len(pack[3]))]
     moveHist = []
     triggerScan = 1
+    actions = 0
     path1 = [] # previous path
     path2 = [] # current path
     fig, ac = plt.subplots()
@@ -99,7 +100,8 @@ def robo_thor_controller(pack, controller, reachablePositions, home_pos):
         controller = pathToNav.path_to_nav(controller, step, path, moveHist)
         path = 0
         iDist = iDist + step
+        actions = actions + 1
 
     return [controller.last_event.metadata["agent"]["position"]['x'],
             controller.last_event.metadata["agent"]["position"]['y'],
-            controller.last_event.metadata["agent"]["position"]['z']], iTime, iDist, iTime, nObsNewClass
+            controller.last_event.metadata["agent"]["position"]['z']], iTime, iDist, iTime, nObsNewClass, actions
