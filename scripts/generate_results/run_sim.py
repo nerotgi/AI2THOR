@@ -498,7 +498,7 @@ if __name__ == "__main__":
     #                     i += 1
 
     for pMod in [1]:
-        for pSeed in range(10):
+        for pSeed in range(6,10,1):
             for pDataName in ['grocery', 'cifar']:
                 for pLearner in ['CBCLPR']:
                     for pBias in ['classWt', 'uniform', 'clusterWt', 'clusterStdLow', 'clusterStdHigh']:

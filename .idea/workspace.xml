@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Requirements.txt and new venv">
-      <change afterPath="$PROJECT_DIR$/results/data/10_26_2022/11_46_36_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_26_2022/11_49_30_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_26_2022/11_56_39_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_26_2022/11_59_07_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_26_2022/12_02_50_robothor.xlsx" afterDir="false" />
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Small changes for new ubuntu setup">
+      <change afterPath="$PROJECT_DIR$/results/data/10_27_2022/14_30_36_robothor.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/data/10_29_2022/17_51_54_robothor.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/data/10_26_2022/12_02_50_robothor.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/10_26_2022/12_02_50_robothor.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/robothor/roboTHORController.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/robothor/roboTHORController.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +79,7 @@
       <recent name="$PROJECT_DIR$/results/charts/10_15_2022" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.plot">
+  <component name="RunManager" selected="Python.run_sim">
     <configuration name="debug_controller" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="AI2THOR" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,7 +153,7 @@
       <workItem from="1666303363604" duration="3300000" />
       <workItem from="1666738554170" duration="884000" />
       <workItem from="1666739608127" duration="1936000" />
-      <workItem from="1666798999524" duration="3134000" />
+      <workItem from="1666798999524" duration="6386000" />
     </task>
     <task id="LOCAL-00001" summary="Added different rooms to the test">
       <created>1663822008164</created>
@@ -362,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666741086590</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Small changes for new ubuntu setup">
+      <created>1666843516606</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1666843516606</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,12 +407,13 @@
     <MESSAGE value="Script fully working including adaptation to new learners and biases." />
     <MESSAGE value="Cleaned" />
     <MESSAGE value="Requirements.txt and new venv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Requirements.txt and new venv" />
+    <MESSAGE value="Small changes for new ubuntu setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small changes for new ubuntu setup" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1666843192840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1666843478585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666304272375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$debug_controller.coverage" NAME="debug_controller Coverage Results" MODIFIED="1666302640248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1666800169086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1667080313470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
