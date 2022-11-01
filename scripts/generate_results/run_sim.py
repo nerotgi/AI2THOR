@@ -307,8 +307,8 @@ def trial(q, pack):
             rotateGaussianSigma=0.1,
             renderInstanceSegmentation=True,
             renderDepthImage=True,
-            width=30,
-            height=30,
+            width=100,
+            height=100,
             fieldOfView=60
         )
         # topDown = topDownView.get_top_down_frame(controller)
@@ -498,15 +498,10 @@ if __name__ == "__main__":
     #                     i += 1
 
     for pMod in [1]:
-        for pSeed in range(6,10,1):
-            for pDataName in ['grocery', 'cifar']:
+            for pDataName in ['cifar']:
                 for pLearner in ['CBCLPR']:
                     for pBias in ['classWt', 'uniform', 'clusterWt', 'clusterStdLow', 'clusterStdHigh']:
-                        testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
-                        i += 1
-                for pLearner in ['SVM']:
-                    for pBias in ['uniform', 'redistrict']:
-                        testPack.append([i, pMod, pSeed, pDataName, pLearner, pBias])
+                        testPack.append([i, pMod, 9, pDataName, pLearner, pBias])
                         i += 1
 
     totalResult = [[] for j in range(i)]

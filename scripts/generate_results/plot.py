@@ -19,7 +19,7 @@ plt.rcParams.update(plt.rcParamsDefault)
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'serif'
 
-df = pd.read_excel('./results/data/10_19_2022/partial.xlsx')
+df = pd.read_excel('./results/data/10_31_2022/16_00_28_robothor.xlsx')
 df = df[df['status'] == 'complete']
 df = df[df['mod'] == 1]
 df = df.iloc[:, 5:-1]
@@ -127,15 +127,15 @@ def get_props(name, d):
     aqua = sns.color_palette()[9]
     black = 'black'
 
-    if name == 'CBCLSVM low class weight':
+    if name == 'CBCLPR low class weight':
         ans = [blue, '-.', 's']
-    elif name == 'CBCLSVM uniform':
+    elif name == 'CBCLPR uniform':
         ans = [green, '--', 'o']
-    elif name == 'CBCLSVM low cluster weight':
+    elif name == 'CBCLPR low cluster weight':
         ans = [purple, ':', '^']
-    elif name == 'CBCLSVM clusterStdLow':
+    elif name == 'CBCLPR clusterStdLow':
         ans = [orange, '-.', 's']
-    elif name == 'CBCLSVM clusterStdHigh':
+    elif name == 'CBCLPR clusterStdHigh':
         ans = [red, '--', 'o']
     elif name == 'SVM uniform':
         ans = [grey, ':', '^']

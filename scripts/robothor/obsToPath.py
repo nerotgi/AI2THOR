@@ -323,6 +323,6 @@ def obs_to_path(controller, iObs, iPos, xTrainWts, scatFlag, homeFlag,
     # ---------------------------------------------------------------------
 
     homeFlag = fHome
-    plt.close()
+    plt.close(fig)
 
     return controller, path, homeFlag, obs, trainClass
