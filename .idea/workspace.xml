@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Cleaned">
-      <change afterPath="$PROJECT_DIR$/results/.~lock.dynamic_chart.xlsx#" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/charts/10_31_2022/19_14_48_robothor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/charts/10_31_2022/19_16_05_robothor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/charts/10_31_2022/19_16_42_robothor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_31_2022/16_00_28_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_31_2022/19_26_56_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_31_2022/19_40_03_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/10_31_2022/22_30_08_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/11_01_2022/09_58_45_robothor.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/data/11_01_2022/17_21_27_robothor.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/data/11_01_2022/20_00_08_robothor.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/data/11_01_2022/22_31_14_robothor.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/data/11_02_2022/03_39_14_robothor.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/data/11_02_2022/04_02_00_robothor.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/generate_results/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_results/plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/.~lock.dynamic_chart.xlsx#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/robothor/obsToPath.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/robothor/obsToPath.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666843516606</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Cleaned">
+      <created>1667336336871</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1667336336871</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,15 +415,15 @@
     <MESSAGE value="CBCL-PR updates from Chris' updates" />
     <MESSAGE value="Partial results with Chris' updates" />
     <MESSAGE value="Script fully working including adaptation to new learners and biases." />
-    <MESSAGE value="Cleaned" />
     <MESSAGE value="Requirements.txt and new venv" />
     <MESSAGE value="Small changes for new ubuntu setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes for new ubuntu setup" />
+    <MESSAGE value="Cleaned" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1667258201542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666304272375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$debug_controller.coverage" NAME="debug_controller Coverage Results" MODIFIED="1666302640248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1667311124582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1667431790873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
