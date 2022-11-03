@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="New data">
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="More new data">
+      <change afterPath="$PROJECT_DIR$/results/data/11_02_2022/23_19_41_robothor.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/data/11_02_2022/19_31_21_robothor.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/11_02_2022/19_31_21_robothor.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -377,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667432012730</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="More new data">
+      <created>1667445145178</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1667445145178</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +403,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added different rooms to the test" />
     <MESSAGE value="Created objects file for Chris" />
     <MESSAGE value="Added objects file" />
     <MESSAGE value="New mapping files" />
@@ -421,12 +427,13 @@
     <MESSAGE value="Small changes for new ubuntu setup" />
     <MESSAGE value="Cleaned" />
     <MESSAGE value="New data" />
-    <option name="LAST_COMMIT_MESSAGE" value="New data" />
+    <MESSAGE value="More new data" />
+    <option name="LAST_COMMIT_MESSAGE" value="More new data" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1667258201542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666304272375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$debug_controller.coverage" NAME="debug_controller Coverage Results" MODIFIED="1666302640248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1667440355187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1667445580404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
