@@ -497,11 +497,12 @@ if __name__ == "__main__":
                 #         testPack.append([i, pMod, 9, pDataName, pLearner, pBias])
                 #         i += 1
 
-    testPack.append([0, 1, 0, 'grocery', 'CBCLPR', 'clusterWt'])
-    testPack.append([1, 1, 1, 'grocery', 'CBCLPR', 'clusterWt'])
-    testPack.append([2, 1, 4, 'grocery', 'CBCLPR', 'clusterStdLow'])
-    # testPack.append([3, 1, 0, 'cifar', 'CBCLPR', 'clusterStdHigh'])
-    # testPack.append([4, 1, 7, 'cifar', 'CBCLPR', 'uniform'])
+    # testPack.append([0, 1, 0, 'grocery', 'CBCLPR', 'clusterWt'])
+    # testPack.append([1, 1, 1, 'grocery', 'CBCLPR', 'clusterWt'])
+    # testPack.append([2, 1, 4, 'grocery', 'CBCLPR', 'clusterStdLow'])
+    testPack.append([3, 1, 0, 'cifar', 'CBCLPR', 'clusterStdHigh'])
+    testPack.append([4, 1, 7, 'cifar', 'CBCLPR', 'uniform'])
+    testPack.append([1, 1, 9, 'cifar', 'CBCLPR', 'clusterWt'])
 
 
 

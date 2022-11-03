@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="Cleaned">
-      <change afterPath="$PROJECT_DIR$/results/data/11_01_2022/17_21_27_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/11_01_2022/20_00_08_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/11_01_2022/22_31_14_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/11_02_2022/03_39_14_robothor.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/data/11_02_2022/04_02_00_robothor.xlsx" afterDir="false" />
+    <list default="true" id="d6168bfd-edc1-450b-850a-b55485cba495" name="Changes" comment="New data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/.~lock.dynamic_chart.xlsx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/data/11_02_2022/19_31_21_robothor.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/results/data/11_02_2022/19_31_21_robothor.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate_results/run_sim.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -375,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667336336871</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="New data">
+      <created>1667432012730</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1667432012730</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,12 +420,13 @@
     <MESSAGE value="Requirements.txt and new venv" />
     <MESSAGE value="Small changes for new ubuntu setup" />
     <MESSAGE value="Cleaned" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned" />
+    <MESSAGE value="New data" />
+    <option name="LAST_COMMIT_MESSAGE" value="New data" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AI2THOR$plot.coverage" NAME="plot Coverage Results" MODIFIED="1667258201542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$Test.coverage" NAME="Test Coverage Results" MODIFIED="1666304272375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI2THOR$debug_controller.coverage" NAME="debug_controller Coverage Results" MODIFIED="1666302640248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1667431790873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AI2THOR$run_sim.coverage" NAME="run_sim Coverage Results" MODIFIED="1667440355187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
